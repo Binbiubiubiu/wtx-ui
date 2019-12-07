@@ -1,0 +1,49 @@
+@import '../../theme/variables/index.scss';
+@import '../../theme/mixin.scss';
+
+$prefixCls: '#{$prefixlib}button';
+
+.#{$prefixCls} {
+  display         : inline-block;
+  padding         : 4px 12px;
+  border-radius   : 24px;
+  cursor          : pointer;
+  background-color: $--button-primary-bg;
+  color           : $--button-text-color;
+  font-size       : $--button-text-size;
+  line-height     : 1;
+  white-space     : nowrap;
+
+  &:active {
+    background-color: darken($--button-primary-bg, 10);
+  }
+
+  &__actived {
+    background-color: $--button-actived-bg;
+
+    &:active {
+      background-color: darken($--button-actived-bg, 10);
+    }
+  }
+
+  &:disabled {
+    background: $--button-disabled-bg;
+    cursor    : not-allowed;
+  }
+
+  &__up {
+    padding-left       : 24px;
+    // background-image   : url("../assets/up_arrow.png");
+    background-repeat  : no-repeat;
+    background-position: left 8px center;
+    background-size    : 8px 14px;
+  }
+
+  &__down {
+    padding-right      : 24px;
+    // background-image   : url("../assets/down_arrow.png");
+    background-repeat  : no-repeat;
+    background-position: right 8px center;
+    background-size    : 8px 14px;
+  }
+}

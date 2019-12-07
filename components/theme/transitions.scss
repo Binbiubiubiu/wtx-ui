@@ -1,0 +1,43 @@
+$fade-direction: left, right, top, bottom;
+$fade-distance: 30px;
+$fade-timing: 0.46s;
+
+@each $c in $fade-direction {
+  .fade-#{$c}-enter {
+    opacity: 0;
+    @if $c == left {
+      transform: translate3d(-$fade-distance, 0, 0);
+    } @else if $c == right {
+      transform: translate3d($fade-distance, 0, 0);
+    } @else if $c == top {
+      transform: translate3d(0, -$fade-distance, 0);
+    } @else if $c == bottom {
+      transform: translate3d(0, $fade-distance, 0);
+    }
+  }
+
+  .fade-#{$c}-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: transform $fade-timing, opacity $fade-timing;
+  }
+
+  .fade-#{$c}-exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .fade-#{$c}-exit-active {
+    opacity: 0;
+    @if $c == left {
+      transform: translate3d(-$fade-distance, 0, 0);
+    } @else if $c == right {
+      transform: translate3d($fade-distance, 0, 0);
+    } @else if $c == top {
+      transform: translate3d(0, -$fade-distance, 0);
+    } @else if $c == bottom {
+      transform: translate3d(0, $fade-distance, 0);
+    }
+    transition: transform $fade-timing, opacity $fade-timing;
+  }
+}

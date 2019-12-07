@@ -1,0 +1,25 @@
+@each $key,
+$item in (l: left, t: top, r: right, b: bottom) {
+  .m-#{$key}-8 {
+    margin-#{$item}: $--block-normal;
+  }
+
+  .m-#{$key}-10 {
+    margin-#{$item}: $--block-big;
+  }
+}
+
+/*****************  float 工具  ******************/
+.f-r {
+  float: right;
+}
+
+.f-l {
+  float: left;
+}
+
+.clear-fix ::after {
+  content: '';
+  display: table;
+  clear  : both;
+}

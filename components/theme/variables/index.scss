@@ -1,0 +1,20 @@
+@import "./colors.scss";
+
+$prefixlib: "lv-";
+
+$--block-normal: 8px;
+$--block-big   : 10px;
+
+/*****************  text  ******************/
+$--text-normal-color: $--color-white;
+$--text-title-color : $--color-green-1;
+
+$--text-normal-size: 14px;
+
+/*****************  button  ******************/
+$--button-text-color: $--color-white;
+$--button-text-size: $--text-normal-size;
+$--button-primary-bg: $--color-primary;
+$--button-actived-bg: $--color-success;
+$--button-disabled-bg: $--color-disabled;
+$--button-danger-bg: $--color-danger;
