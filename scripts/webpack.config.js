@@ -1,12 +1,23 @@
 const path = require("path");
+const fs = require("fs");
 
+const webpack = require("webpack");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-const { name } = require("../package.json");
+
+const { name, version, description } = require("../package.json");
 
 const r = p => path.resolve(__dirname, "..", p);
+
+const LOGO = `
+           __                   _ 
+ _      __/ /__  __      __  __(_)
+| | /| / / __/ |/_/_____/ / / / / 
+| |/ |/ / /__>  </_____/ /_/ / /  
+|__/|__/\\__/_/|_|      \\__,_/_/  
+`;
 
 module.exports = {
   mode: "production",
@@ -77,7 +88,7 @@ module.exports = {
       new TerserJSPlugin({
         cache: true,
         parallel: true,
-        // extractComments: false,
+        extractComments: false, // 是否提取开源注释
         terserOptions: {
           compress: {
             warnings: false,
@@ -108,6 +119,8 @@ module.exports = {
     new ProgressBarPlugin({
       clear: false
     }),
+    new webpack.BannerPlugin(`${LOGO}\n${version}\n${description}
+      \n${fs.readFileSync(r("LICENSE"))}`),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import cls from "classnames";
 
 const defaultProps = {
-  prefixCls: "lv-badge",
+  prefixCls: "wtx-badge",
   radius: false
 };
 

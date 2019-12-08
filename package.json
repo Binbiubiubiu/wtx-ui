@@ -15,6 +15,7 @@
     "clean": "rimraf dist lib es",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "copy-assets-to-lib": "cpx \"./components/**/*.{scss,png,jpg}\" ./lib",
     "copy-assets-to-es": "cpx \"./components/**/*.{scss,png,jpg}\" ./es",
     "upgrade": "yarn upgrade"
@@ -22,6 +23,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://Wildlifes@github.com/Wildlifes/lv-ui.git"
+  },
+  "storybook-deployer": {
+    "gitUsername": "Wildlifes",
+    "gitEmail": "2632003786@qq.com",
+    "commitMessage": "Deploy Storybook to GitHub Pages"
   },
   "private": false,
   "author": "Wildlifes <2632003786@qq.com>",
@@ -32,19 +38,21 @@
   "files": [
     "lib",
     "dist",
-    "es"
+    "es",
+    "LICENSE"
   ],
   "sideEffects": [
     "dist/*",
     "lib/*",
     "es/*",
-    "*.less"
+    "*.scss"
   ],
   "homepage": "https://github.com/Wildlifes/lv-ui#readme",
   "description": "a bad work",
   "keywords": [
     "ui",
-    "library"
+    "library",
+    "wtx-ui"
   ],
   "dependencies": {
     "classnames": "^2.2.6"
@@ -56,6 +64,7 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@types/classnames": "^2.2.9",
     "@types/jest": "^24.0.23",
     "awesome-typescript-loader": "^5.2.1",

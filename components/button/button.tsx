@@ -2,7 +2,7 @@ import React, { MouseEventHandler, FC } from "react";
 import cls from "classnames";
 
 const defaultProps = {
-  prefixCls: "lv-button",
+  prefixCls: "wtx-button",
   up: false,
   down: false,
   actived: false,

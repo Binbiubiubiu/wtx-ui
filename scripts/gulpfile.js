@@ -108,11 +108,11 @@ function createMinCssInUmd() {
 }
 
 exports.default = parallel(
-  //   copyAssets,
-  //   copyAssets2,
-  //   createCss,
-  //   createCssInCjs,
-  //   createCssInEs,
+  copyAssets,
+  copyAssets2,
+  createCss,
+  createCssInCjs,
+  createCssInEs,
   createCssInUmd,
   createMinCssInUmd
 );
