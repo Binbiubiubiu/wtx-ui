@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://Wildlifes@github.com/Wildlifes/lv-ui.git"
+    "url": "git+https://Wildlifes@github.com/Wildlifes/wtx-ui.git"
   },
   "storybook-deployer": {
     "gitUsername": "Wildlifes",
@@ -35,7 +35,7 @@
   "author": "Wildlifes <2632003786@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Wildlifes/lv-ui/issues"
+    "url": "https://github.com/Wildlifes/wtx-ui/issues"
   },
   "files": [
     "lib",
@@ -49,7 +49,7 @@
     "es/*",
     "*.scss"
   ],
-  "homepage": "https://github.com/Wildlifes/lv-ui#readme",
+  "homepage": "https://github.com/Wildlifes/wtx-ui#readme",
   "description": "a bad work",
   "keywords": [
     "ui",
