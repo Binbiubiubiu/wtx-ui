@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render a <Button/> components 1`] = `
+<div>
+  <div
+    class="wtx-badge"
+  >
+    默认
+  </div>
+  <div
+    class="wtx-badge"
+  >
+    上一页
+  </div>
+  <div
+    class="wtx-badge"
+  >
+    下一页
+  </div>
+  <div
+    class="wtx-badge"
+  >
+    禁用按钮
+  </div>
+  <div
+    class="wtx-badge"
+  >
+    激活按钮
+  </div>
+</div>
+`;

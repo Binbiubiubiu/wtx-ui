@@ -8,7 +8,7 @@ module.exports = async ({ config }) => {
       {
         loader: require.resolve("awesome-typescript-loader"),
         options: {
-          transpileOnly: true
+          // transpileOnly: true
         }
       },
       // {

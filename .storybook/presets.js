@@ -7,9 +7,9 @@ module.exports = [
       configureJSX: true,
       babelOptions: {},
       sourceLoaderOptions: {
-        // parser: "typescript",
-        // prettierConfig: { printWidth: 80, singleQuote: false },
-        // uglyCommentsRegex: [/^eslint-.*/, /^global.*/]
+        parser: "typescript",
+        prettierConfig: { printWidth: 80, singleQuote: false },
+        uglyCommentsRegex: [/^eslint-.*/, /^global.*/]
       }
     }
   }

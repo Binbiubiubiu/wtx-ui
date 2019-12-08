@@ -1,8 +1,7 @@
 module.exports = {
-  setupFiles: ["./tests/setup.js"],
+  setupFiles: ["./tests/setup.ts"],
   transform: {
-    "^.+\\.[tj]sx?$": "ts-jest",
-    "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
+    ".(ts|tsx)": "ts-jest"
   },
   testPathIgnorePatterns: ["/node_modules/", "/lib/"],
   testRegex: "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
