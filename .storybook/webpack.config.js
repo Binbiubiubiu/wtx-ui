@@ -1,12 +1,22 @@
 const path = require("path");
+const createCompiler = require("@storybook/addon-docs/mdx-compiler-plugin");
 
-module.exports = ({ config }) => {
+module.exports = async ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
       {
-        loader: require.resolve("awesome-typescript-loader")
+        loader: require.resolve("awesome-typescript-loader"),
+        options: {
+          transpileOnly: true
+        }
       },
+      // {
+      //   loader: require.resolve("babel-loader"),
+      //   options: {
+      //     presets: [["react-app", { flow: false, typescript: true }]]
+      //   }
+      // },
       // Optional
       {
         loader: require.resolve("react-docgen-typescript-loader")

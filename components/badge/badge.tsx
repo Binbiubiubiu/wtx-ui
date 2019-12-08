@@ -31,6 +31,9 @@ export type BadgeProps = {
   [props: string]: any;
 };
 
+/**
+ * The world's most _basic_ button
+ */
 export const Badge: FC<BadgeProps> = props => {
   const { prefixCls, type, radius, className, children } = props;
   return (

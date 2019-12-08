@@ -27,5 +27,5 @@
     "emitDecoratorMetadata": true
   },
   "include": ["src/**/*", "components/**/*", "stories/badge.stories.tsx"],
-  "exclude": ["node_modules", "**/__test__"]
+  "exclude": ["node_modules", "**/__tests__"]
 }

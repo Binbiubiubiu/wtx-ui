@@ -6,7 +6,7 @@ $prefixCls: '#{$prefixlib}badge';
 .#{$prefixCls} {
   display         : inline-block;
   color           : $--badge-text-color;
-  background-color: $--badge-success-bg;
+  background-color: $--badge-primary-bg;
   padding         : 4px 12px;
 
   font-size     : $--badge-text-size;
@@ -27,7 +27,7 @@ $prefixCls: '#{$prefixlib}badge';
   // 异常
   &__error {
     padding-left: 26px;
-    background  : $--badge-danger-bg url("../assets/fork.png") no-repeat left 8px center / 16px 12px;
+    background  : $--badge-danger-bg url("../assets/fork.png") no-repeat left 8px center / 12px 12px;
   }
 
   // 隐患

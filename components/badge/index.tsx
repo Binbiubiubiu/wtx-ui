@@ -1,5 +1,5 @@
-import Badge from "./badge";
+import Badge, { BadgeProps as IProps } from "./badge";
 
-export { BadgeProps } from "./badge";
+export type BadgeProps = IProps;
 
 export default Badge;

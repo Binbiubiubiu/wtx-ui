@@ -1,0 +1,91 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Badge from "../components/badge";
+import "../components/badge/style";
+
+<Meta title="公共组件|标签" component={Badge} />
+
+# Badge
+
+标签
+
+## Props
+
+<Props of={Badge} />
+
+## Stories
+
+默认
+
+<Preview>
+  <Story name="默认">
+    <Badge>默认标签</Badge>
+  </Story>
+</Preview>
+
+圆角
+
+<Preview>
+  <Story name="圆角">
+    <Badge radius>圆角标签</Badge>
+  </Story>
+</Preview>
+
+正常
+
+<Preview>
+  <Story name="正常">
+    <Badge type="ok" radius>
+      正常状态
+    </Badge>
+  </Story>
+</Preview>
+
+异常
+
+<Preview>
+  <Story name="异常">
+    <Badge type="error" radius>
+      异常状态
+    </Badge>
+  </Story>
+</Preview>
+
+警告
+
+<Preview>
+  <Story name="警告">
+    <Badge type="warning" radius>
+      警告状态
+    </Badge>
+  </Story>
+</Preview>
+
+禁用
+
+<Preview>
+  <Story name="禁用">
+    <Badge type="disabled" radius>
+      禁用状态
+    </Badge>
+  </Story>
+</Preview>
+
+在线
+
+<Preview>
+  <Story name="在线">
+    <Badge type="online" radius>
+      在线状态
+    </Badge>
+  </Story>
+</Preview>
+
+离线
+
+<Preview>
+  <Story name="离线">
+    <Badge type="outline" radius>
+      离线状态
+    </Badge>
+  </Story>
+</Preview>
