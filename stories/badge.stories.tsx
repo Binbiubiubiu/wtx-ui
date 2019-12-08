@@ -1,46 +1,47 @@
 import React from "react";
-import Tag from "../components/badge";
+import Badge from "../components/badge";
+import "../components/badge/style";
 
 export default {
   title: "公共组件|标签"
 };
 
-export const 默认 = () => <Tag>默认标签</Tag>;
+export const 默认 = () => <Badge>默认标签</Badge>;
 
-export const 圆角 = () => <Tag radius>圆角标签</Tag>;
+export const 圆角 = () => <Badge radius>圆角标签</Badge>;
 
 export const 正常 = () => (
-  <Tag type="ok" radius>
+  <Badge type="ok" radius>
     正常
-  </Tag>
+  </Badge>
 );
 
 export const 异常 = () => (
-  <Tag type="error" radius>
+  <Badge type="error" radius>
     异常
-  </Tag>
+  </Badge>
 );
 
 export const 警告 = () => (
-  <Tag type="warning" radius>
+  <Badge type="warning" radius>
     警告
-  </Tag>
+  </Badge>
 );
 
 export const 禁用 = () => (
-  <Tag type="disabled" radius>
+  <Badge type="disabled" radius>
     禁用
-  </Tag>
+  </Badge>
 );
 
 export const 在线 = () => (
-  <Tag type="online" radius>
+  <Badge type="online" radius>
     在线
-  </Tag>
+  </Badge>
 );
 
 export const 离线 = () => (
-  <Tag type="outline" radius>
+  <Badge type="outline" radius>
     离线
-  </Tag>
+  </Badge>
 );

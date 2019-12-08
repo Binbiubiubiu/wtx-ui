@@ -1,6 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import Button from "../components/button";
+import "../components/button/style";
 
 export default {
   title: "公共组件|按钮"
