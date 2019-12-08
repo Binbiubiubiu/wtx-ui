@@ -1,0 +1,59 @@
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
+
+$prefixCls: '#{$prefixlib}badge';
+
+.#{$prefixCls} {
+  display         : inline-block;
+  color           : $--badge-text-color;
+  background-color: $--badge-success-bg;
+  padding         : 4px 12px;
+
+  font-size     : $--badge-text-size;
+  white-space   : nowrap;
+  vertical-align: middle;
+
+  // 圆角
+  &__radius {
+    border-radius: 24px;
+  }
+
+  // 正常
+  &__ok {
+    padding-left: 30px;
+    background  : $--badge-success-bg url("../assets/tick.png") no-repeat left 8px center / 16px 12px;
+  }
+
+  // 异常
+  &__error {
+    padding-left: 26px;
+    background  : $--badge-danger-bg url("../assets/fork.png") no-repeat left 8px center / 16px 12px;
+  }
+
+  // 隐患
+  &__danger {
+    background: $--badge-danger-bg;
+  }
+
+  // 警告
+  &__warning {
+    background: $--badge-warning-bg;
+  }
+
+  // 禁用
+  &__disabled {
+    background: $--badge-disabled-bg;
+  }
+
+  // 在线
+  &__online {
+    padding-left: 36px;
+    background  : $--badge-success-bg url("../assets/wifi_online.jpg") no-repeat left 8px center / 20px 14px;
+  }
+
+  // 离线
+  &__online {
+    padding-left: 36px;
+    background  : $--badge-success-bg url("../assets/wifi_online.jpg") no-repeat left 8px center / 20px 14px;
+  }
+}

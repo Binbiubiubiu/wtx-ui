@@ -3,13 +3,15 @@ const path = require("path");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const { name } = require("../package.json");
 
 const r = p => path.resolve(__dirname, "..", p);
 
 module.exports = {
   mode: "production",
   entry: {
-    index: r("components/index.ts")
+    [name]: r("components/index.tsx")
   },
   output: {
     library: "lv-ui",
@@ -33,8 +35,7 @@ module.exports = {
       commonjs2: "react-dom",
       commonjs: "react-dom",
       amd: "react-dom"
-    },
-    classnames: "classnames"
+    }
   },
   module: {
     rules: [
@@ -51,22 +52,19 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          // "style-loader",
+          MiniCssExtractPlugin.loader,
           { loader: "css-loader", options: { importLoaders: 2 } },
           "postcss-loader",
           "sass-loader"
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|woff|eot|ttf)(\?.*)$/,
+        test: /\.(png|jpe?g|gif|woff|eot|ttf|svg)$/,
         use: [
           {
             loader: "url-loader",
             options: {
-              limit: false
+              limit: 10000
             }
           }
         ]
@@ -74,8 +72,20 @@ module.exports = {
     ]
   },
   optimization: {
+    minimize: true,
     minimizer: [
-      new TerserJSPlugin({}),
+      new TerserJSPlugin({
+        cache: true,
+        parallel: true,
+        // extractComments: false,
+        terserOptions: {
+          compress: {
+            warnings: false,
+            drop_debugger: true,
+            drop_console: false
+          }
+        }
+      }),
       new OptimizeCSSAssetsPlugin({
         // 压缩css  与 ExtractTextPlugin 配合使用
         cssProcessor: require("cssnano"),
@@ -95,6 +105,9 @@ module.exports = {
     // }
   },
   plugins: [
+    new ProgressBarPlugin({
+      clear: false
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional

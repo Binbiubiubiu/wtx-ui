@@ -1,10 +1,16 @@
 body {
-  font-size: 14px;
+  font-size              : 14px;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+  -webkit-font-smoothing : antialiased;
+  text-rendering         : optimizeLegibility;
+  font-family            : Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
     Microsoft YaHei, Arial, sans-serif;
+}
+
+html,
+body {
+  width : 100%;
+  height: 100%;
 }
 
 html,
@@ -34,8 +40,8 @@ td,
 tr,
 section,
 p {
-  margin: 0;
-  padding: 0;
+  margin    : 0;
+  padding   : 0;
   box-sizing: border-box;
 }
 
@@ -47,8 +53,8 @@ ol {
 button,
 select,
 input {
-  border: 0;
-  cursor: pointer;
+  border : 0;
+  cursor : pointer;
   outline: none;
 }
 
@@ -61,8 +67,8 @@ video {
 a,
 a:focus,
 a:hover {
-  cursor: pointer;
-  color: inherit;
+  cursor         : pointer;
+  color          : inherit;
   text-decoration: none;
 }
 
@@ -71,13 +77,13 @@ div:focus {
 }
 
 select {
-  /*Chrome同Firefox与IE里面的右侧三角显示的样式不同*/
+  // Chrome同Firefox与IE里面的右侧三角显示的样式不同
   border: none;
-  /*将默认的select选择框样式清除*/
-  background: none;
-  appearance: none;
-  -moz-appearance: none;
+  // 将默认的select选择框样式清除
+  background        : none;
+  appearance        : none;
+  -moz-appearance   : none;
   -webkit-appearance: none;
-  text-align: right;
-  text-align-last: right;
+  text-align        : right;
+  text-align-last   : right;
 }

@@ -1,4 +1,4 @@
-@import '../../theme/variables/index.scss';
+@import '../../theme/var/index.scss';
 @import '../../theme/mixin.scss';
 
 $prefixCls: '#{$prefixlib}button';
@@ -33,7 +33,7 @@ $prefixCls: '#{$prefixlib}button';
 
   &__up {
     padding-left       : 24px;
-    // background-image   : url("../assets/up_arrow.png");
+    background-image   : url("../assets/up_arrow.png");
     background-repeat  : no-repeat;
     background-position: left 8px center;
     background-size    : 8px 14px;
@@ -41,7 +41,7 @@ $prefixCls: '#{$prefixlib}button';
 
   &__down {
     padding-right      : 24px;
-    // background-image   : url("../assets/down_arrow.png");
+    background-image   : url("../assets/down_arrow.png");
     background-repeat  : no-repeat;
     background-position: right 8px center;
     background-size    : 8px 14px;

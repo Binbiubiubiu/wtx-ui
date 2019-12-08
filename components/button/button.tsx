@@ -1,6 +1,5 @@
 import React, { MouseEventHandler, FC } from "react";
 import cls from "classnames";
-import "./style";
 
 const defaultProps = {
   prefixCls: "lv-button",
@@ -49,11 +48,15 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={cls(prefixCls, className, {
-        [`${prefixCls}__up`]: up,
-        [`${prefixCls}__down`]: down,
-        [`${prefixCls}__actived`]: actived
-      })}
+      className={cls(
+        prefixCls,
+        {
+          [`${prefixCls}__up`]: up,
+          [`${prefixCls}__down`]: down,
+          [`${prefixCls}__actived`]: actived
+        },
+        className
+      )}
       disabled={disabled}
       onClick={e => handleClick && !disabled && handleClick(e)}
       {...rest}

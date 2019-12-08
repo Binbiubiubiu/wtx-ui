@@ -1,2 +1,2 @@
-export { default as theme } from "./theme";
 export { default as Button } from "./button";
+export { default as Badge } from "./badge";
