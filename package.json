@@ -27,7 +27,7 @@
   "storybook-deployer": {
     "gitUsername": "Wildlifes",
     "gitEmail": "2632003786@qq.com",
-    "commitMessage": "Deploy Storybook to GitHub Pages"
+    "commitMessage": ":rocket: Deploy Storybook to GitHub Pages"
   },
   "private": false,
   "author": "Wildlifes <2632003786@qq.com>",
