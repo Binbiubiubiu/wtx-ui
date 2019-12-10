@@ -1,0 +1,39 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+
+import { isCodeShow } from "./config";
+import ImageIcon from "../components/icon";
+import ZoomImage from "../public/assets/zoom-btns/qie tu 138 (11).png";
+
+<Meta title="公共组件|图标" component={ImageIcon} />
+
+# Icon
+
+图标
+
+## Props
+
+<Props of={ImageIcon} />
+
+## Stories
+
+默认
+
+<Preview withSource={isCodeShow}>
+  <Story name="默认">
+    <ImageIcon path={ZoomImage} />
+  </Story>
+</Preview>
+
+可点击
+
+<Preview withSource={isCodeShow}>
+  <Story name="可点击">
+    <ImageIcon
+      path={ZoomImage}
+      width="80"
+      height="80"
+      onClick={action("clicked")}
+    />
+  </Story>
+</Preview>

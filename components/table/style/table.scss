@@ -1,0 +1,19 @@
+.#{$prefixCls}table {
+  font-size : px2rem(14);
+  color     : #fff;
+  text-align: center;
+}
+
+.#{$prefixCls}table__header {
+  color: #6ae6ec;
+}
+
+.#{$prefixCls}table__loading {
+  width: 100%;
+
+  .loading-icon {
+    display       : inline-block;
+    vertical-align: middle;
+    margin-right  : px2rem(30);
+  }
+}

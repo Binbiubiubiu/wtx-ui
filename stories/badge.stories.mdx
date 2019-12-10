@@ -5,7 +5,8 @@ import {
   Props,
   SourceState
 } from "@storybook/addon-docs/blocks";
-import Badge from "../components/badge";
+import { isCodeShow } from "./config";
+import Badge from "components/badge";
 
 <Meta title="公共组件|标签" component={Badge} />
 
@@ -21,7 +22,7 @@ import Badge from "../components/badge";
 
 默认
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="默认">
     <Badge>默认标签</Badge>
   </Story>
@@ -29,7 +30,7 @@ import Badge from "../components/badge";
 
 圆角
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="圆角">
     <Badge radius>圆角标签</Badge>
   </Story>
@@ -37,7 +38,7 @@ import Badge from "../components/badge";
 
 正常
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="正常">
     <Badge type="ok" radius>
       正常状态
@@ -47,7 +48,7 @@ import Badge from "../components/badge";
 
 异常
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="异常">
     <Badge type="error" radius>
       异常状态
@@ -57,7 +58,7 @@ import Badge from "../components/badge";
 
 警告
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="警告">
     <Badge type="warning" radius>
       警告状态
@@ -67,7 +68,7 @@ import Badge from "../components/badge";
 
 禁用
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="禁用">
     <Badge type="disabled" radius>
       禁用状态
@@ -77,7 +78,7 @@ import Badge from "../components/badge";
 
 在线
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="在线">
     <Badge type="online" radius>
       在线状态
@@ -87,7 +88,7 @@ import Badge from "../components/badge";
 
 离线
 
-<Preview>
+<Preview withSource={isCodeShow}>
   <Story name="离线">
     <Badge type="outline" radius>
       离线状态

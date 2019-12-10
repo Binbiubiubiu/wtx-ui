@@ -1,0 +1,81 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+
+import { isCodeShow } from "./config";
+import Loading from "components/loading";
+
+<Meta title="公共组件|加载动画" component={Loading} />
+
+# Loading
+
+加载动画
+
+## Props
+
+<Props of={Loading} />
+
+## Stories
+
+小球
+
+<Preview withSource={isCodeShow}>
+  <Story name="小球">
+    <Loading icon="balls" />
+  </Story>
+</Preview>
+
+柱子
+
+<Preview withSource={isCodeShow}>
+  <Story name="柱子">
+    <Loading icon="bars" />
+  </Story>
+</Preview>
+
+泡泡
+
+<Preview withSource={isCodeShow}>
+  <Story name="泡泡">
+    <Loading icon="bubbles" />
+  </Story>
+</Preview>
+
+方块
+
+<Preview withSource={isCodeShow}>
+  <Story name="方块">
+    <Loading icon="cubes" />
+  </Story>
+</Preview>
+
+左右弹跳
+
+<Preview withSource={isCodeShow}>
+  <Story name="左右弹跳">
+    <Loading icon="cylon" />
+  </Story>
+</Preview>
+
+旋转
+
+<Preview withSource={isCodeShow}>
+  <Story name="旋转">
+    <Loading icon="spin" />
+  </Story>
+</Preview>
+
+旋转泡泡
+
+<Preview withSource={isCodeShow}>
+  <Story name="旋转泡泡">
+    <Loading icon="spin-bubbles" />
+  </Story>
+</Preview>
+
+旋转方块
+
+<Preview withSource={isCodeShow}>
+  <Story name="旋转方块">
+    <Loading icon="spokes" />
+  </Story>
+</Preview>

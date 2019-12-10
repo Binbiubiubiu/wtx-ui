@@ -1,0 +1,29 @@
+.#{$prefixCls}row {
+  display: flex;
+}
+
+$align-item: (
+  top: flex-start,
+  middle: center,
+  bottom: flex-end
+);
+
+@each $key, $value in $align-item {
+  .#{$prefixCls}row-flex-#{$key} {
+    align-items: $value;
+  }
+}
+
+$justify-content: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  space-around: space-around,
+  space-between: space-between
+);
+
+@each $key, $value in $justify-content {
+  .#{$prefixCls}row-flex-#{$key} {
+    justify-content: $value;
+  }
+}

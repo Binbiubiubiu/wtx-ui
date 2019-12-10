@@ -4,14 +4,18 @@
 $prefixCls: '#{$prefixlib}badge';
 
 .#{$prefixCls} {
-  display         : inline-block;
-  color           : $--badge-text-color;
-  background-color: $--badge-primary-bg;
-  padding         : 4px 12px;
+  display: inline-block;
+  color  : $--badge-text-color;
+  padding: 4px 12px;
 
   font-size     : $--badge-text-size;
   white-space   : nowrap;
   vertical-align: middle;
+
+  // default
+  &__danger {
+    background-color: $--badge-primary-bg;
+  }
 
   // 圆角
   &__radius {

@@ -1,0 +1,11 @@
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
+
+$prefixCls: '#{$prefixlib}image-icon';
+
+.#{$prefixCls} {
+
+  &__clickable {
+    cursor: pointer;
+  }
+}

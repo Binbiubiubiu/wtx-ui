@@ -3,7 +3,6 @@ import { withA11y } from "@storybook/addon-a11y";
 import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { themes } from "@storybook/theming";
-import { SourceState } from "@storybook/addon-docs/dist/blocks";
 
 const newViewports = {
   case1: {

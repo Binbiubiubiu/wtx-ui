@@ -1,0 +1,24 @@
+.#{$prefixCls}video-player__wrapper {
+  position: relative;
+  border  : solid 1px #87a8ff;
+
+  .#{$prefixCls}video-player {
+    width     : 100%;
+    height    : 100%;
+    object-fit: cover;
+  }
+
+  .#{$prefixCls}video-player__error {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    background-color: #000;
+    color           : #fff;
+    font-size       : px2rem(24);
+  }
+}

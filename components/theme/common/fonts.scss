@@ -1,0 +1,24 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+    font-family: 'DS-Digital-Italic';
+    src        : url('../fonts/lcd/DS-DIGII.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/lcd/DS-DIGII.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/lcd/DS-DIGII.otf') format('opentype'),
+        /* Open Type Font */
+        url('../fonts/lcd/DS-DIGII.svg') format('svg'),
+        /* Legacy iOS */
+        url('../fonts/lcds/DS-DIGII.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/lcd/DS-DIGII.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/lcd/DS-DIGII.woff2') format('woff2');
+    /* Modern Browsers */
+    font-weight: normal;
+    font-style : normal;
+}
+
+.led-num {
+    font-family: 'DS-Digital-Italic', Sans-Serif;
+}

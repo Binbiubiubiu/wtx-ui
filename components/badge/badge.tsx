@@ -1,39 +1,54 @@
-import React, { FC } from "react";
+import React, { FC, CSSProperties } from "react";
 import cls from "classnames";
 
+import { prefixlib } from "../_util/constants";
+
+type BadgeType =
+  | "default"
+  | "ok"
+  | "error"
+  | "danger"
+  | "warning"
+  | "disabled"
+  | "online"
+  | "outline";
+
 const defaultProps = {
-  prefixCls: "wtx-badge",
+  prefixCls: `${prefixlib}badge`,
+  type: "default" as BadgeType,
   radius: false
 };
 
 export type BadgeProps = {
   /**
    * 图标类型
+   * (
+   * ok：正常,
+   * error：异常,
+   * danger：危险,
+   * warning：警告,
+   * disabled：警用,
+   * online：在线,
+   * outline：离线,
+   * )
    *
-   * ok：正常
-   * error：异常
-   * danger：危险
-   * warning：警告
-   * disabled：警用
-   * online：在线
-   * outline：离线
+   * @default default
    */
-  type?:
-    | "ok"
-    | "error"
-    | "danger"
-    | "warning"
-    | "disabled"
-    | "online"
-    | "outline";
-  /** 是否圆角 */
+  type?: BadgeType;
+  /**
+   * 是否圆角
+   *
+   * @default false
+   *  */
   radius?: boolean;
-  [props: string]: any;
+  /** 自定义class */
+  className?: string;
+  /** 样式前缀 */
+  prefixCls?: string;
+  /** 自定义style */
+  style?: CSSProperties;
 };
 
-/**
- * The world's most _basic_ button
- */
 export const Badge: FC<BadgeProps> = props => {
   const { prefixCls, type, radius, className, children } = props;
   return (

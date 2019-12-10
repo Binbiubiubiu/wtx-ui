@@ -46,7 +46,9 @@ module.exports = {
       commonjs2: "react-dom",
       commonjs: "react-dom",
       amd: "react-dom"
-    }
+    },
+    // echarts: "echarts",
+    // "video.js": "video.js"
   },
   module: {
     rules: [

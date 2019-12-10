@@ -1,0 +1,39 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+import { isCodeShow } from "./config";
+
+import Card,{InlineCard} from "../components/card";
+
+<Meta title="公共组件|卡片" component={Card} />
+
+# Card
+
+卡片
+
+## Props
+
+<Props of={Card} />
+
+## Stories
+
+默认
+
+<Preview withSource={isCodeShow}>
+  <Story name="默认">
+    <Card
+      icon={
+        <Icon path="assets/number-bar-icons/11.png" width="40" height="46" />
+      }
+      title="摄像头类型(种)"
+      content="6"
+    ></Card>
+  </Story>
+</Preview>
+
+内联样式
+
+<Preview withSource={isCodeShow}>
+  <Story name="内联样式">
+    <InlineCard title="消防联网设备总数(个)" content="300"/>
+  </Story>
+</Preview>

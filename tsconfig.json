@@ -5,10 +5,11 @@
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "sourceMap": true,
     "allowJs": false,
+    "resolveJsonModule": true,
     "jsx": "react",
     "moduleResolution": "node",
     "rootDirs": ["src", "components", "stories"],
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "components/*": ["components/*"]

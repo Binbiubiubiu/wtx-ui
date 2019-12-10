@@ -1,0 +1,35 @@
+.#{$prefixCls}dialog__theme-dark {
+  background: $dialog-background-1;
+  border: $dialog-border-1;
+}
+
+.#{$prefixCls}dialog__theme-light {
+  background: $dialog-background-2;
+  border: $dialog-border-2;
+}
+
+.#{$prefixCls}dialog__header {
+  display: flex;
+  align-items: center;
+  padding: $blank-space-normal;
+
+  .#{$prefixCls}dialog__title {
+    font-size: px2rem(16);
+    color: $dialog-title-color;
+    line-height: 1;
+  }
+
+  .#{$prefixCls}dialog__expand {
+    flex: auto;
+    line-height: 0;
+    text-align: right;
+
+    & > * {
+      margin-right: $blank-space-normal;
+    }
+  }
+}
+
+.#{$prefixCls}dialog__content {
+  padding: 0 $blank-space-normal $blank-space-normal $blank-space-normal;
+}

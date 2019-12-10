@@ -30,16 +30,22 @@ const DIR = {
   dist_css: r("dist/css")
 };
 
-function copyAssets() {
+function copyAssetsToLibAndEs() {
   return src(DIR.assets)
     .pipe(dest(DIR.lib))
     .pipe(dest(DIR.es));
 }
 
-function copyAssets2() {
+function copyAssetsToDist() {
   return src(r("components/**/*.{png,jpg}"))
-    .pipe(flatten())
-    .pipe(dest(DIR.dist + "/assets"));
+    .pipe(flatten({ newPath: "/assets" }))
+    .pipe(dest(DIR.dist));
+}
+
+function copyFonts() {
+  return src(
+    r("components/theme/fonts/**/*.{eot,otf,svg,ttf,woff,woff2}")
+  ).pipe(dest(DIR.dist + "/fonts"));
 }
 
 function createCss() {
@@ -95,6 +101,7 @@ function createCssInUmd() {
 
 function createMinCssInUmd() {
   return src(DIR.sass)
+    .pipe(sourcemaps.init())
     .pipe(
       sass({
         outputStyle: "compressed"
@@ -104,12 +111,14 @@ function createMinCssInUmd() {
     .pipe(concat(`${name}.min.css`))
     .pipe(cssnano())
     .pipe(size())
+    .pipe(sourcemaps.write("./"))
     .pipe(dest(DIR.dist_css));
 }
 
 exports.default = parallel(
-  copyAssets,
-  copyAssets2,
+  copyAssetsToLibAndEs,
+  copyAssetsToDist,
+  copyFonts,
   createCss,
   createCssInCjs,
   createCssInEs,

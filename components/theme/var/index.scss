@@ -33,3 +33,15 @@ $--badge-warning-bg  : $--color-warning;
 $--badge-bg-1: $--color-green-2;
 $--badge-bg-2: $--color-brown-1;
 $--badge-bg-3: $--color-green-3;
+
+// *****************  card  ******************
+$--card-text-color       : $--color-green-4;
+$--inline-card-text-color: $--color-green-1;
+
+// *****************  dialog  ******************
+$dialog-background-1: opacify($--color-green-6, 0.7);
+$dialog-border-1    : 1px solid $--color-green-3;
+$dialog-title-color : $--color-green-5;
+
+$dialog-background-2: opacify($--color-blue-1, 0.7);
+$dialog-border-2 : 1px solid $--color-blue-2;

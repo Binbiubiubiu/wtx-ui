@@ -1,0 +1,10 @@
+.chart-title {
+  display: inline-block;
+  font-size: px2rem(14);
+  color: #fff;
+  text-align: center;
+
+  .number {
+    font-size: px2rem(18);
+  }
+}

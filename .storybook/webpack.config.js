@@ -8,7 +8,7 @@ module.exports = async ({ config }) => {
       {
         loader: require.resolve("awesome-typescript-loader"),
         options: {
-          // transpileOnly: true
+          transpileOnly: true
         }
       },
       // {
@@ -19,7 +19,10 @@ module.exports = async ({ config }) => {
       // },
       // Optional
       {
-        loader: require.resolve("react-docgen-typescript-loader")
+        loader: require.resolve("react-docgen-typescript-loader"),
+        options: {
+          tsconfigPath: path.resolve(__dirname, "../tsconfig.json")
+        }
       }
     ]
   });

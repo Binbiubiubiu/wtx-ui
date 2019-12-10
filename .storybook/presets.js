@@ -11,6 +11,17 @@ module.exports = [
         prettierConfig: { printWidth: 80, singleQuote: false },
         uglyCommentsRegex: [/^eslint-.*/, /^global.*/]
       }
+      // sourceLoaderOptions: {
+      //   parser: "typescript",
+      //   prettierConfig: {
+      //     printWidth: 100,
+      //     tabWidth: 2,
+      //     bracketSpacing: true,
+      //     trailingComma: "es6",
+      //     singleQuote: true
+      //   },
+      //   uglyCommentsRegex: [/^eslint-.*/, /^global.*/]
+      // }
     }
   }
 ];

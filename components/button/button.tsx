@@ -1,8 +1,10 @@
-import React, { MouseEventHandler, FC } from "react";
+import React, { MouseEventHandler, FC, CSSProperties } from "react";
 import cls from "classnames";
 
+import { prefixlib } from "../_util/constants";
+
 const defaultProps = {
-  prefixCls: "wtx-button",
+  prefixCls: `${prefixlib}button`,
   up: false,
   down: false,
   actived: false,
@@ -32,7 +34,12 @@ export interface ButtonProps {
   disabled?: boolean;
   /**点击事件 */
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  [prop: string]: any;
+  /** 自定义class */
+  className?: string;
+  /** 样式前缀 */
+  prefixCls?: string;
+  /** 自定义style */
+  style?: CSSProperties;
 }
 
 export const Button: FC<ButtonProps> = ({
