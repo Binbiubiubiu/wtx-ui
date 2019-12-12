@@ -1,9 +1,9 @@
 // *************** color ***************
-$--color-primary  : #3e81f5 !default;
-$--color-success  : #28a80a !default;
-$--color-danger   : #fe07ae !default;
-$--color-warning  : #b46a2a !default;
-$--color-disabled : #999999 !default;
+$--color-primary: #3e81f5 !default;
+$--color-success: #28a80a !default;
+$--color-danger: #fe07ae !default;
+$--color-warning: #b46a2a !default;
+$--color-disabled: #999 !default;
 
 $--color-green-1: #47f3e5 !default;
 $--color-green-2: #568b39 !default;
@@ -12,10 +12,14 @@ $--color-green-4: #d4f9ff !default;
 $--color-green-5: #0eff24 !default;
 $--color-green-6: #142134 !default;
 
+$--color-gray-1: #777 !default;
+
 $--color-blue-1: #132f61 !default;
 $--color-blue-2: #1f4cc4 !default;
+$--color-blue-3: #0059ff !default;
 
 $--color-brown-1: #907f2a !default;
 
-$--color-white: #ffffff !default;
-$--color-black: #000000 !default;
+$--color-white: #fff !default;
+
+$--color-black: #000 !default;

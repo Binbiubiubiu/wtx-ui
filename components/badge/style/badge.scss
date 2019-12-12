@@ -5,11 +5,10 @@ $prefixCls: '#{$prefixlib}badge';
 
 .#{$prefixCls} {
   display: inline-block;
-  color  : $--badge-text-color;
   padding: 4px 12px;
-
-  font-size     : $--badge-text-size;
-  white-space   : nowrap;
+  font-size: $--badge-text-size;
+  color: $--badge-text-color;
+  white-space: nowrap;
   vertical-align: middle;
 
   // default
@@ -25,13 +24,13 @@ $prefixCls: '#{$prefixlib}badge';
   // 正常
   &__ok {
     padding-left: 30px;
-    background  : $--badge-success-bg url("../assets/tick.png") no-repeat left 8px center / 16px 12px;
+    background: $--badge-success-bg url('../assets/tick.png') no-repeat left 8px center / 16px 12px;
   }
 
   // 异常
   &__error {
     padding-left: 26px;
-    background  : $--badge-danger-bg url("../assets/fork.png") no-repeat left 8px center / 12px 12px;
+    background: $--badge-danger-bg url('../assets/fork.png') no-repeat left 8px center / 12px 12px;
   }
 
   // 隐患
@@ -52,12 +51,14 @@ $prefixCls: '#{$prefixlib}badge';
   // 在线
   &__online {
     padding-left: 36px;
-    background  : $--badge-success-bg url("../assets/wifi_online.jpg") no-repeat left 8px center / 20px 14px;
+    background: $--badge-success-bg url('../assets/wifi_online.jpg') no-repeat left 8px center /
+      20px 14px;
   }
 
   // 离线
   &__online {
     padding-left: 36px;
-    background  : $--badge-success-bg url("../assets/wifi_online.jpg") no-repeat left 8px center / 20px 14px;
+    background: $--badge-success-bg url('../assets/wifi_online.jpg') no-repeat left 8px center /
+      20px 14px;
   }
 }

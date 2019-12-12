@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, CSSProperties } from "react";
+import cls from "classnames";
 import videojs from "video.js";
-import "video.js/dist/video-js.css";
-import "./style";
 import { shallowMerge } from "../_util/data";
 import defaultVideoPlayerConfig from "./utils/default-config";
 import { analyzeTypeOfVideo, isVaildURL } from "./utils";
 import { px2rem } from "../_util/viewports";
 
+import { prefixlib } from "../_util/constants";
+
 const defaultProps = {
+  prefixCls: `${prefixlib}video-player`,
   width: 400,
   height: 240
 };
@@ -31,7 +33,12 @@ export interface VideoPlayerProps {
    * 视频覆盖默认配置一些设置
    */
   config?: object;
-  [props: string]: any;
+  /** 自定义class */
+  className?: string;
+  /** 样式前缀 */
+  prefixCls?: string;
+  /** 自定义style */
+  style?: CSSProperties;
 }
 
 type VideoPlayerState = {
@@ -41,6 +48,7 @@ type VideoPlayerState = {
 
 class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
   player: any;
+
   videoNode: React.RefObject<HTMLVideoElement>;
 
   static defaultProps = defaultProps;
@@ -82,9 +90,7 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
 
   /** videojs  视频流获取失败 错误处理 */
   addVideoPlayerErrorListener = () => {
-    this.setState(() => {
-      return { error: true };
-    });
+    this.setState(() => ({ error: true }));
   };
 
   componentWillMount() {
@@ -97,29 +103,27 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
 
   renderError() {
     const { isVaildURL } = this.state;
+    const { prefixCls } = this.props;
     return (
-      <div className="za-video-player__error">
+      <div className={`${prefixCls}__error`}>
         {isVaildURL ? "视频播放异常" : "未安装"}
       </div>
     );
   }
 
   render() {
-    const { width, height } = this.props;
+    const { prefixCls, width, height } = this.props;
     const { error } = this.state;
 
     return (
       <div
-        className="za-video-player__wrapper"
+        className={`${prefixCls}__wrapper`}
         style={{
           width: `${px2rem(width)}rem`,
           height: `${px2rem(height)}rem`
         }}
       >
-        <video
-          ref={this.videoNode}
-          className="video-js za-video-player"
-        ></video>
+        <video ref={this.videoNode} className={cls("video-js", prefixCls)} />
         {error && this.renderError()}
       </div>
     );

@@ -4,21 +4,20 @@
 $prefixCls: '#{$prefixlib}inline-card';
 
 .#{$prefixCls} {
-    display     : inline-block;
-    text-align  : center;
-    color       : $--inline-card-text-color;
-    border-right: 1px solid $--inline-card-text-color;
+  display: inline-block;
+  color: $--inline-card-text-color;
+  text-align: center;
+  border-right: 1px solid $--inline-card-text-color;
 
-    &:last-of-type {
-        border-right: none;
-    }
+  &:last-of-type {
+    border-right: none;
+  }
 
-    .#{$prefixCls}__title {
-        font-size: $--text-normal-size;
-    }
+  .#{$prefixCls}__title {
+    font-size: $--text-normal-size;
+  }
 
-    .led-num {
-        font-size: 26px;
-    }
-
+  .led-num {
+    font-size: 26px;
+  }
 }

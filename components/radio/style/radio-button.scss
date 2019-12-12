@@ -1,38 +1,40 @@
-.#{$prefixCls}radio-button {
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
+
+$prefixCls: '#{$prefixlib}radio-button';
+
+.#{$prefixCls} {
   position: relative;
   display: inline-block;
-  min-width: px2rem(90);
+  min-width: 90px;
+  padding: 6px 20px;
 
-  padding: px2rem(6) px2rem(20);
+  /* border-right  : solid 1px #2480db; */
 
-  background-color: darken(#2480db, 44);
-  color: #fff;
-  /*border-right  : solid 1px #2480db;*/
-
-  font-size: px2rem(14);
-  text-align: center;
+  font-size: 14px;
   line-height: 1;
-
+  color: #fff;
+  text-align: center;
   cursor: pointer;
+  background-color: darken(#2480db, 44);
 
   &:first-child {
-    border-top-left-radius: px2rem(16);
-    border-bottom-left-radius: px2rem(16);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
   }
 
   &:last-child {
-    border-top-right-radius: px2rem(16);
-    border-bottom-right-radius: px2rem(16);
-    /*border-right            : 0;*/
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
 
-  .#{$prefixCls}radio-button__input {
+  .#{$prefixCls}__input {
     position: absolute;
     z-index: -1;
     opacity: 0;
   }
 }
 
-.#{$prefixCls}radio-button__checked {
-  background-color: $za-btn-primary-bg;
+.#{$prefixCls}__checked {
+  background-color: $--color-primary;
 }

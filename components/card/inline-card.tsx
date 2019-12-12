@@ -1,10 +1,10 @@
-import React, { FC } from "react";
-import cls from "classnames";
+import React, { FC } from 'react';
+import cls from 'classnames';
 
-import { prefixlib } from "../_util/constants";
+import { prefixlib } from '../_util/constants';
 
 const defaultProps = {
-  prefixCls: `${prefixlib}inline-card`
+  prefixCls: `${prefixlib}inline-card`,
 };
 
 export interface InlineCardProps {
@@ -20,10 +20,15 @@ export interface InlineCardProps {
   style?: React.CSSProperties;
 }
 
-export const InlineCard: FC<InlineCardProps> = props => {
-  const { title, content, prefixCls, className, ...rest } = props;
+export const InlineCard: FC<InlineCardProps> = ({
+  title,
+  content,
+  prefixCls,
+  className,
+  ...rest
+}) => {
   const contentCls = cls(`${prefixCls}__content`, {
-    "led-num": !isNaN(+content)
+    'led-num': !isNaN(+content),
   });
 
   return (

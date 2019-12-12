@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import { Row } from ".";
+import React, { FC } from 'react';
+import { Row } from '.';
 
 export default {
-  title: "公共组件|布局"
+  title: '公共组件|弹性布局',
 };
 
 const Block: FC = ({ children }) => (
@@ -10,8 +10,8 @@ const Block: FC = ({ children }) => (
     style={{
       width: 50,
       height: 50,
-      background: "#1EA7FD",
-      textAlign: "center"
+      background: '#1EA7FD',
+      textAlign: 'center',
     }}
   >
     {children}

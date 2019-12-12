@@ -1,5 +1,10 @@
-.#{$prefixCls}radio-group {
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
+
+$prefixCls: '#{$prefixlib}radio-group';
+
+.#{$prefixCls} {
   display: inline-block;
-  line-height: 1;
   font-size: 0;
+  line-height: 1;
 }

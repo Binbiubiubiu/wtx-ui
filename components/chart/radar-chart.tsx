@@ -1,5 +1,5 @@
-import React, { Component, createRef } from "react";
-import echarts, { ECharts, EChartOption } from "@/lib/echarts";
+import React, { Component, createRef } from 'react';
+import echarts, { ECharts, EChartOption } from '../_lib/echarts';
 
 export interface RadarChartProps {
   /**
@@ -11,6 +11,7 @@ export interface RadarChartProps {
 
 export class RadarChart extends Component<RadarChartProps> {
   chartRef: React.RefObject<HTMLDivElement>;
+
   chart?: ECharts;
 
   constructor(props: RadarChartProps) {
@@ -30,14 +31,14 @@ export class RadarChart extends Component<RadarChartProps> {
   render() {
     const { style } = this.props;
 
-    return <div ref={this.chartRef} style={style}></div>;
+    return <div ref={this.chartRef} style={style} />;
   }
 }
 
 export default RadarChart;
 
 const getOptions: (data: any) => EChartOption = data => {
-  const color = ["#6ee245", "#d3ad2b", "#2bd3cd", "#d32bcd", "#ec7b37"];
+  const color = ['#6ee245', '#d3ad2b', '#2bd3cd', '#d32bcd', '#ec7b37'];
 
   let max = data[0].value;
   data.forEach((d: any) => {
@@ -49,40 +50,40 @@ const getOptions: (data: any) => EChartOption = data => {
   const renderData: any = [
     {
       value: [],
-      name: "告警类型TOP5",
-      symbol: "none",
+      name: '告警类型TOP5',
+      symbol: 'none',
       lineStyle: {
         normal: {
-          color: "#33D332",
-          width: 1
-        }
+          color: '#33D332',
+          width: 1,
+        },
       },
       areaStyle: {
         normal: {
-          color: "rgba(51,211,51,.4)"
-        }
-      }
-    }
+          color: 'rgba(51,211,51,.4)',
+        },
+      },
+    },
   ];
 
   data.forEach((d: any, i: number) => {
-    const value = ["", "", "", "", ""];
+    const value = ['', '', '', '', ''];
     value[i] = max;
     renderData[0].value[i] = d.value;
     renderData.push({
       value,
-      symbol: "circle",
+      symbol: 'circle',
       symbolSize: 8,
       lineStyle: {
         normal: {
-          color: "transparent"
-        }
+          color: 'transparent',
+        },
       },
       itemStyle: {
         normal: {
-          color: color[i]
-        }
-      }
+          color: color[i],
+        },
+      },
     });
   });
   const indicator: any = [];
@@ -91,59 +92,59 @@ const getOptions: (data: any) => EChartOption = data => {
     indicator.push({
       name: d.name,
       max,
-      color: "#fff"
+      color: '#fff',
     });
   });
 
   return {
     tooltip: {
       show: false,
-      trigger: "item"
+      trigger: 'item',
     },
     radar: {
-      center: ["50%", "50%"],
-      radius: "65%",
+      center: ['50%', '50%'],
+      radius: '65%',
       startAngle: 90, // 起始角度
       splitNumber: 4,
-      shape: "circle",
+      shape: 'circle',
       splitArea: {
         areaStyle: {
-          color: "transparent"
-        }
+          color: 'transparent',
+        },
       },
       name: {
         textStyle: {
-          color: "#fff",
-          fontSize: 12
-        }
+          color: '#fff',
+          fontSize: 12,
+        },
       },
       nameGap: 6,
       axisLabel: {
         show: false,
         fontSize: 20,
-        color: "#000",
-        fontStyle: "normal",
-        fontWeight: "normal"
+        color: '#000',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
       },
       axisLine: {
         show: true,
         lineStyle: {
-          color: "#53C0EC"
-        }
+          color: '#53C0EC',
+        },
       },
       splitLine: {
         show: true,
         lineStyle: {
-          color: "#53C0EC"
-        }
+          color: '#53C0EC',
+        },
       },
-      indicator
+      indicator,
     },
     series: [
       {
-        type: "radar",
-        data: renderData
-      }
-    ]
+        type: 'radar',
+        data: renderData,
+      },
+    ],
   };
 };

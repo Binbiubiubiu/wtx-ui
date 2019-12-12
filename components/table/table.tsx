@@ -1,16 +1,13 @@
-import React, { Component, MouseEvent } from "react";
-// import classnames from "classnames";
-import {
-  Table,
-  AutoSizer,
-  InfiniteLoader,
-  TableRowRenderer
-} from "react-virtualized";
-import "react-virtualized/styles.css";
-import "./style";
-import Loading from "../loading";
+import React, { Component, MouseEvent, CSSProperties } from 'react';
+import cls from 'classnames';
+import { Table, AutoSizer, InfiniteLoader, TableRowRenderer } from 'react-virtualized';
+import Loading from '../loading';
 
-const defaultProps = {};
+import { prefixlib } from '../_util/constants';
+
+const defaultProps = {
+  prefixCls: `${prefixlib}table`,
+};
 
 export type InfiniteTableProps = {
   /**
@@ -31,7 +28,12 @@ export type InfiniteTableProps = {
    *  @default 30
    */
   headerHeight: number;
-  [prop: string]: any;
+  /** 自定义class */
+  className?: string;
+  /** 样式前缀 */
+  prefixCls?: string;
+  /** 自定义style */
+  style?: CSSProperties;
 };
 
 export type InfiniteTableState = {
@@ -40,10 +42,7 @@ export type InfiniteTableState = {
   count: number;
 };
 
-export class InfiniteTable extends Component<
-  InfiniteTableProps,
-  InfiniteTableState
-> {
+export class InfiniteTable extends Component<InfiniteTableProps, InfiniteTableState> {
   static defaultProps = defaultProps;
 
   constructor(props: InfiniteTableProps) {
@@ -51,12 +50,12 @@ export class InfiniteTable extends Component<
     this.state = {
       count: 11,
       list: new Array(10).fill({}).map(item => ({
-        time: "11-04\n11:13:53",
-        name: "郭雅",
-        sex: "女",
-        phone: "18635425423",
-        house: "桂苑小区"
-      }))
+        time: '11-04\n11:13:53',
+        name: '郭雅',
+        sex: '女',
+        phone: '18635425423',
+        house: '桂苑小区',
+      })),
     };
     this._isRowLoaded = this._isRowLoaded.bind(this);
     this._loadMoreRows = this._loadMoreRows.bind(this);
@@ -64,7 +63,7 @@ export class InfiniteTable extends Component<
 
   render() {
     const { list, count } = this.state;
-    const { height, headerHeight, rowHeight, children } = this.props;
+    const { prefixCls, height, headerHeight, rowHeight, className, children } = this.props;
 
     return (
       <AutoSizer disableHeight>
@@ -85,8 +84,8 @@ export class InfiniteTable extends Component<
                 onRowsRendered={onRowsRendered}
                 rowRenderer={this._rowRenderer}
                 refs={registerChild}
-                className="za-table"
-                headerClassName="za-table__header"
+                className={cls(prefixCls, className)}
+                headerClassName={`${prefixCls}__header`}
               >
                 {children}
               </Table>
@@ -106,23 +105,21 @@ export class InfiniteTable extends Component<
     console.log(startIndex, stopIndex);
     setTimeout(() => {
       this.setState(
-        (preState: any) => {
-          return {
-            count: preState.count + 10,
-            list: preState.list.concat(
-              new Array(10).fill({
-                time: "11-04\n11:13:53",
-                name: "郭雅",
-                sex: "女",
-                phone: "18635425423",
-                house: "桂苑小区"
-              })
-            )
-          };
-        },
+        (preState: any) => ({
+          count: preState.count + 10,
+          list: preState.list.concat(
+            new Array(10).fill({
+              time: '11-04\n11:13:53',
+              name: '郭雅',
+              sex: '女',
+              phone: '18635425423',
+              house: '桂苑小区',
+            }),
+          ),
+        }),
         () => {
           fetchPromiseResolve();
-        }
+        },
       );
     }, 20000);
     let fetchPromiseResolve: { (): void; (value?: unknown): void };
@@ -140,8 +137,9 @@ export class InfiniteTable extends Component<
 
   // 渲染loading
   _renderLoading() {
+    const { prefixCls } = this.props;
     return (
-      <div className="za-table__loading">
+      <div className={`${prefixCls}__loading`}>
         <Loading className="loading-icon" /> 加载中...
       </div>
     );
@@ -159,52 +157,36 @@ export class InfiniteTable extends Component<
     onRowMouseOver,
     onRowRightClick,
     rowData,
-    style
+    style,
   }) => {
-    const a11yProps: any = { "aria-rowindex": index + 1 };
+    const a11yProps: any = { 'aria-rowindex': index + 1 };
 
-    if (
-      onRowClick ||
-      onRowDoubleClick ||
-      onRowMouseOut ||
-      onRowMouseOver ||
-      onRowRightClick
-    ) {
-      a11yProps["aria-label"] = "row";
+    if (onRowClick || onRowDoubleClick || onRowMouseOut || onRowMouseOver || onRowRightClick) {
+      a11yProps['aria-label'] = 'row';
       a11yProps.tabIndex = 0;
 
       if (onRowClick) {
-        a11yProps.onClick = (event: MouseEvent) =>
-          onRowClick({ event, index, rowData });
+        a11yProps.onClick = (event: MouseEvent) => onRowClick({ event, index, rowData });
       }
       if (onRowDoubleClick) {
         a11yProps.onDoubleClick = (event: MouseEvent) =>
           onRowDoubleClick({ event, index, rowData });
       }
       if (onRowMouseOut) {
-        a11yProps.onMouseOut = (event: MouseEvent) =>
-          onRowMouseOut({ event, index, rowData });
+        a11yProps.onMouseOut = (event: MouseEvent) => onRowMouseOut({ event, index, rowData });
       }
       if (onRowMouseOver) {
-        a11yProps.onMouseOver = (event: MouseEvent) =>
-          onRowMouseOver({ event, index, rowData });
+        a11yProps.onMouseOver = (event: MouseEvent) => onRowMouseOver({ event, index, rowData });
       }
       if (onRowRightClick) {
-        a11yProps.onContextMenu = (event: MouseEvent) =>
-          onRowRightClick({ event, index, rowData });
+        a11yProps.onContextMenu = (event: MouseEvent) => onRowRightClick({ event, index, rowData });
       }
     }
 
     const row = this.state.list[index];
 
     return (
-      <div
-        {...a11yProps}
-        className={className}
-        key={key}
-        role="row"
-        style={style}
-      >
+      <div {...a11yProps} className={className} key={key} role="row" style={style}>
         {!row ? this._renderLoading() : columns}
       </div>
     );

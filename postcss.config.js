@@ -1,7 +1,7 @@
 module.exports = {
-  ident: "postcss",
+  ident: 'postcss',
   plugins: {
-    "postcss-preset-env": {},
-    "postcss-import": {}
-  }
+    'postcss-preset-env': {},
+    'postcss-import': {},
+  },
 };

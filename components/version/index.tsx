@@ -1,3 +1,3 @@
-import { version } from "../../package.json";
+const { version } = require("../../package.json");
 
 export default version;

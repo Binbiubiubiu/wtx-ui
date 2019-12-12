@@ -1,10 +1,12 @@
-import React, { FC, CSSProperties } from "react";
-import classnames from "classnames";
-import "./style";
-import RadioGroup, { RadioGroupProps } from "./radio-group";
+import React, { FC, CSSProperties } from 'react';
+import cls from 'classnames';
+import RadioGroup, { RadioGroupProps } from './radio-group';
+
+import { prefixlib } from '../_util/constants';
 
 const defaultProps = {
-  disabled: false
+  prefixCls: `${prefixlib}radio`,
+  disabled: false,
 };
 
 export interface RadioProps {
@@ -29,17 +31,30 @@ export interface RadioProps {
   style?: CSSProperties;
 }
 
-export const Radio: FC<RadioProps> & { Group: FC<RadioGroupProps> } = props => {
-  const { checked, name, label, disabled, onChecked, children } = props;
-
+export const Radio: FC<RadioProps> & { Group: FC<RadioGroupProps> } = ({
+  prefixCls,
+  checked,
+  name,
+  label,
+  disabled,
+  onChecked,
+  children,
+  className,
+  ...rest
+}) => {
   return (
     <label
-      className={classnames("za-radio", {
-        "za-radio__checked": checked === label
-      })}
+      className={cls(
+        prefixCls,
+        {
+          [`${prefixCls}__checked`]: checked === label,
+        },
+        className,
+      )}
+      {...rest}
     >
       <input
-        className="za-radio__input"
+        className={`${prefixCls}__input`}
         value={label}
         type="radio"
         name={name}

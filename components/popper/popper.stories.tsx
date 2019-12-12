@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Manager, Reference, Popper } from "react-popper";
-import Button from "../button";
+import React, { useState } from 'react';
+import { Manager, Reference, Popper } from 'react-popper';
+import ReactDOM from 'react-dom';
+import Button from '../button';
 // import Dialog from "../dialog";
-import ReactDOM from "react-dom";
 
 export default {
-  title: "公共组件|气泡"
+  title: '公共组件|气泡',
 };
 
 export const 默认 = () => {
@@ -31,7 +31,7 @@ export const 默认 = () => {
                 </div>
               )}
             </Popper>,
-            document.body
+            document.body,
           )
         : null}
     </Manager>

@@ -1,5 +1,5 @@
-import React, { Component, createRef } from "react";
-import echarts, { ECharts, EChartOption } from "@/lib/echarts";
+import React, { Component, createRef } from 'react';
+import echarts, { ECharts, EChartOption } from '../_lib/echarts';
 
 export interface LineChartProps {
   /**
@@ -19,6 +19,7 @@ export interface LineChartProps {
 
 export class LineChart extends Component<LineChartProps> {
   chartRef: React.RefObject<HTMLDivElement>;
+
   chart?: ECharts;
 
   constructor(props: LineChartProps) {
@@ -38,7 +39,7 @@ export class LineChart extends Component<LineChartProps> {
   render() {
     const { ...rest } = this.props;
 
-    return <div ref={this.chartRef} {...rest}></div>;
+    return <div ref={this.chartRef} {...rest} />;
   }
 }
 
@@ -47,58 +48,58 @@ export default LineChart;
 const getOptions: (x: string[], y: any, tags?: string[]) => EChartOption = (
   xAxis,
   yAxis,
-  tags = []
+  tags = [],
 ) => {
-  const areaColor = ["rgba(51,211,51,.4)", "rgba(254,10,183,.4)"];
+  const areaColor = ['rgba(51,211,51,.4)', 'rgba(254,10,183,.4)'];
   return {
-    color: ["#33D333", "#FE0AB7"],
+    color: ['#33D333', '#FE0AB7'],
     xAxis: {
-      type: "category",
+      type: 'category',
       boundaryGap: false,
       data: xAxis,
       axisLabel: {
-        formatter: "{value}",
-        color: "#fff"
+        formatter: '{value}',
+        color: '#fff',
       },
       axisLine: {
         lineStyle: {
-          color: "#fff"
-        }
+          color: '#fff',
+        },
       },
       splitLine: {
         show: true,
         lineStyle: {
-          color: "#fff"
-        }
-      }
+          color: '#fff',
+        },
+      },
     },
     yAxis: {
-      type: "value",
+      type: 'value',
       axisLabel: {
-        formatter: "{value}",
-        color: "#fff"
+        formatter: '{value}',
+        color: '#fff',
       },
       axisLine: {
         lineStyle: {
-          color: "#fff"
-        }
+          color: '#fff',
+        },
       },
       splitLine: {
         show: true,
         lineStyle: {
-          color: "#fff"
-        }
-      }
+          color: '#fff',
+        },
+      },
     },
     legend: {
       show: tags.length > 0,
       data: tags,
       bottom: 0,
       textStyle: {
-        color: "#fff"
+        color: '#fff',
       },
       itemWidth: 12,
-      itemHeight: 10
+      itemHeight: 10,
       // itemGap: 35
     },
     grid: {
@@ -106,20 +107,20 @@ const getOptions: (x: string[], y: any, tags?: string[]) => EChartOption = (
       y: 14,
       x2: 20,
       y2: tags.length > 0 ? 44 : 24,
-      borderWidth: 10
+      borderWidth: 10,
     },
     series: yAxis.map((it: string, i: number) => ({
       name: tags[i],
       data: it,
-      type: "line",
+      type: 'line',
       symbolSize: 10,
-      symbol: "circle",
+      symbol: 'circle',
       hoverAnimation: false,
       areaStyle: {
         normal: {
-          color: areaColor[i]
-        }
-      }
-    }))
+          color: areaColor[i],
+        },
+      },
+    })),
   };
 };

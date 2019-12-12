@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 export interface GaugeChartProps {
   /**
@@ -7,8 +7,6 @@ export interface GaugeChartProps {
   data?: any[];
 }
 
-export const GaugeChart: FC<GaugeChartProps> = () => {
-  return <div></div>;
-};
+export const GaugeChart: FC<GaugeChartProps> = () => <div />;
 
 export default GaugeChart;

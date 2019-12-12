@@ -1,23 +1,22 @@
-$select-prefix: "rc-select";
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
 
-* {
-  box-sizing: border-box;
-}
+$prefixCls: 'rc-select';
 
 @mixin search-input-without-border() {
-  .#{$select-prefix}-selection-search-input {
+  .#{$prefixCls}-selection-search-input {
+    width: 100%;
+    background: rgba(255, 0, 0, 0.2);
     border: none;
     outline: none;
-    background: rgba(255, 0, 0, 0.2);
-    width: 100%;
   }
 }
 
-.#{$select-prefix} {
-  display: inline-block;
-  font-size: 12px;
-  width: 100px;
+.#{$prefixCls} {
   position: relative;
+  display: inline-block;
+  width: 100px;
+  font-size: 12px;
 
   &-disabled {
     &,
@@ -25,25 +24,24 @@ $select-prefix: "rc-select";
       cursor: not-allowed;
     }
 
-    .#{$select-prefix}-selector {
+    .#{$prefixCls}-selector {
       opacity: 0.3;
     }
   }
 
   &-show-arrow {
-    .#{$select-prefix}-loading {
-      .#{$select-prefix}-arrow {
+    .#{$prefixCls}-loading {
+      .#{$prefixCls}-arrow {
         &-icon::after {
           box-sizing: border-box;
           width: 12px;
           height: 12px;
-          border-radius: 100%;
+          margin-top: 4px;
           border: 2px solid #999;
           border-top-color: transparent;
           border-bottom-color: transparent;
+          border-radius: 100%;
           transform: none;
-          margin-top: 4px;
-
           animation: rcSelectLoadingIcon 0.5s infinite;
         }
       }
@@ -51,17 +49,17 @@ $select-prefix: "rc-select";
   }
 
   // ============== Selector ===============
-  .#{$select-prefix}-selection-placeholder {
+  .#{$prefixCls}-selection-placeholder {
     opacity: 0.4;
   }
 
   // --------------- Single ----------------
   &-single {
-    .#{$select-prefix}-selector {
-      display: flex;
+    .#{$prefixCls}-selector {
       position: relative;
+      display: flex;
 
-      .#{$select-prefix}-selection-search {
+      .#{$prefixCls}-selection-search {
         width: 100%;
 
         &-input {
@@ -69,8 +67,8 @@ $select-prefix: "rc-select";
         }
       }
 
-      .#{$select-prefix}-selection-item,
-      .#{$select-prefix}-selection-placeholder {
+      .#{$prefixCls}-selection-item,
+      .#{$prefixCls}-selection-placeholder {
         position: absolute;
         top: 1px;
         right: px2rem(34);
@@ -80,11 +78,11 @@ $select-prefix: "rc-select";
     }
 
     // Not customize
-    &:not(.#{$select-prefix}-customize-input) {
-      .#{$select-prefix}-selector {
+    &:not(.#{$prefixCls}-customize-input) {
+      .#{$prefixCls}-selector {
         padding: 0 px2rem(32) 0 px2rem(17);
-        background-color: $za-select-bg;
-        border: $za-select-border;
+        background-color: $--select-bg;
+        border: $--select-border;
         border-radius: px2rem(16);
 
         @include search-input-without-border();
@@ -93,18 +91,18 @@ $select-prefix: "rc-select";
   }
 
   // -------------- Multiple ---------------
-  &-multiple .#{$select-prefix}-selector {
+  &-multiple .#{$prefixCls}-selector {
     display: flex;
     flex-wrap: wrap;
     padding: 1px;
     border: 1px solid #000;
 
-    .#{$select-prefix}-selection-item {
+    .#{$prefixCls}-selection-item {
       flex: none;
+      padding: 0 8px;
+      margin-right: 2px;
       background: #bbb;
       border-radius: 4px;
-      margin-right: 2px;
-      padding: 0 8px;
 
       &-disabled {
         cursor: not-allowed;
@@ -112,7 +110,7 @@ $select-prefix: "rc-select";
       }
     }
 
-    .#{$select-prefix}-selection-search {
+    .#{$prefixCls}-selection-search {
       position: relative;
 
       &-input,
@@ -123,11 +121,11 @@ $select-prefix: "rc-select";
 
       &-mirror {
         position: absolute;
+        position: none;
+        top: 0;
+        left: 0;
         z-index: 999;
         white-space: nowrap;
-        position: none;
-        left: 0;
-        top: 0;
         visibility: hidden;
       }
     }
@@ -137,35 +135,35 @@ $select-prefix: "rc-select";
 
   // ================ Icons ================
   &-allow-clear {
-    &.#{$select-prefix}-multiple .#{$select-prefix}-selector {
+    &.#{$prefixCls}-multiple .#{$prefixCls}-selector {
       padding-right: 20px;
     }
 
-    .#{$select-prefix}-clear {
+    .#{$prefixCls}-clear {
       position: absolute;
-      right: 20px;
       top: 0;
+      right: 20px;
     }
   }
 
   &-show-arrow {
-    &.#{$select-prefix}-multiple #{$select-prefix}-selector {
+    &.#{$prefixCls}-multiple #{$prefixCls}-selector {
       padding-right: 20px;
     }
 
-    .#{$select-prefix}-arrow {
-      pointer-events: none;
+    .#{$prefixCls}-arrow {
       position: absolute;
-      right: 5px;
       top: 0;
+      right: 5px;
+      pointer-events: none;
 
       &-icon::after {
-        content: "";
-        border: 4px solid transparent;
+        display: inline-block;
         width: 0;
         height: 0;
-        display: inline-block;
-        border-top-color: $za-select-text-color;
+        content: '';
+        border: 4px solid transparent;
+        border-top-color: $--select-text-color;
         transform: translateY(4px);
       }
     }
@@ -173,7 +171,7 @@ $select-prefix: "rc-select";
 
   // =============== Focused ===============
   &-focused {
-    .#{$select-prefix}-selector {
+    .#{$prefixCls}-selector {
       border-color: initial;
       // border-color: blue !important;
     }
@@ -181,10 +179,10 @@ $select-prefix: "rc-select";
 
   // ============== Dropdown ===============
   &-dropdown {
-    border: $za-select-dropdown-border;
     // min-height: 100px;
     position: absolute;
     background: #fff;
+    border: $--select-dropdown-border;
     border-radius: px2rem(10);
 
     &-hidden {
@@ -194,15 +192,15 @@ $select-prefix: "rc-select";
 
   // =============== Option ================
   &-item {
+    padding: 4px 16px;
     font-size: 16px;
     line-height: 1.5;
-    padding: 4px 16px;
 
     // >>> Group
     &-group {
-      color: #999;
-      font-weight: bold;
       font-size: 80%;
+      font-weight: bold;
+      color: #999;
     }
 
     // >>> Option
@@ -214,11 +212,11 @@ $select-prefix: "rc-select";
         padding-left: 24px;
       }
 
-      .#{$select-prefix}-item-option-state {
-        display: none;
+      .#{$prefixCls}-item-option-state {
         position: absolute;
-        right: 0;
         top: 4px;
+        right: 0;
+        display: none;
         pointer-events: none;
       }
 
@@ -235,75 +233,78 @@ $select-prefix: "rc-select";
 
     // >>> Empty
     &-empty {
-      text-align: center;
       color: #999;
+      text-align: center;
     }
   }
 }
 
-.#{$select-prefix}-selection__choice-zoom {
+.#{$prefixCls}-selection__choice-zoom {
   transition: all 0.3s;
 }
 
-.#{$select-prefix}-selection__choice-zoom-appear {
+.#{$prefixCls}-selection__choice-zoom-appear {
   opacity: 0;
   transform: scale(0.5);
 
-  & .#{$select-prefix}-selection__choice-zoom-appear-active {
+  & .#{$prefixCls}-selection__choice-zoom-appear-active {
     opacity: 1;
     transform: scale(1);
   }
 }
-.#{$select-prefix}-selection__choice-zoom-leave {
+
+.#{$prefixCls}-selection__choice-zoom-leave {
   opacity: 1;
   transform: scale(1);
 
-  & .#{$select-prefix}-selection__choice-zoom-leave-active {
+  & .#{$prefixCls}-selection__choice-zoom-leave-active {
     opacity: 0;
     transform: scale(0.5);
   }
 }
 
 @mixin effect() {
+  transform-origin: 0 0;
   animation-duration: 0.3s;
   animation-fill-mode: both;
-  transform-origin: 0 0;
 }
 
-.#{$select-prefix}-dropdown {
+.#{$prefixCls}-dropdown {
   &-slide-up-enter,
   &-slide-up-appear {
     @include effect();
+
     opacity: 0;
-    animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
     animation-play-state: paused;
+    animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
   }
 
   &-slide-up-leave {
     @include effect();
+
     opacity: 1;
-    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-play-state: paused;
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
   }
 
-  &-slide-up-enter.#{$select-prefix}-dropdown-slide-up-enter-active.#{$select-prefix}-dropdown-placement-bottomLeft,
-  &-slide-up-appear.#{$select-prefix}-dropdown-slide-up-appear-active.#{$select-prefix}-dropdown-placement-bottomLeft {
+  &-slide-up-enter.#{$prefixCls}-dropdown-slide-up-enter-active.#{$prefixCls}-dropdown-placement-bottomLeft,
+  &-slide-up-appear.#{$prefixCls}-dropdown-slide-up-appear-active.#{$prefixCls}-dropdown-placement-bottomLeft {
     animation-name: rcSelectDropdownSlideUpIn;
     animation-play-state: running;
   }
 
-  &-slide-up-leave.#{$select-prefix}-dropdown-slide-up-leave-active.#{$select-prefix}-dropdown-placement-bottomLeft {
+  &-slide-up-leave.#{$prefixCls}-dropdown-slide-up-leave-active.#{$prefixCls}-dropdown-placement-bottomLeft {
     animation-name: rcSelectDropdownSlideUpOut;
     animation-play-state: running;
   }
 
-  &-slide-up-enter.#{$select-prefix}-dropdown-slide-up-enter-active.#{$select-prefix}-dropdown-placement-topLeft,
-  &-slide-up-appear.#{$select-prefix}-dropdown-slide-up-appear-active.#{$select-prefix}-dropdown-placement-topLeft {
+  &-slide-up-enter.#{$prefixCls}-dropdown-slide-up-enter-active.#{$prefixCls}-dropdown-placement-topLeft,
+  &-slide-up-appear.#{$prefixCls}-dropdown-slide-up-appear-active.#{$prefixCls}-dropdown-placement-topLeft {
     animation-name: rcSelectDropdownSlideDownIn;
     animation-play-state: running;
   }
 
-  &-slide-up-leave.#{$select-prefix}-dropdown-slide-up-leave-active.#{$select-prefix}-dropdown-placement-topLeft {
+  &-slide-up-leave.#{$prefixCls}-dropdown-slide-up-leave-active.#{$prefixCls}-dropdown-placement-topLeft {
     animation-name: rcSelectDropdownSlideDownOut;
     animation-play-state: running;
   }
@@ -312,25 +313,28 @@ $select-prefix: "rc-select";
 @keyframes rcSelectDropdownSlideUpIn {
   0% {
     opacity: 0;
-    transform-origin: 0% 0%;
     transform: scaleY(0);
+    transform-origin: 0% 0%;
   }
+
   100% {
     opacity: 1;
-    transform-origin: 0% 0%;
     transform: scaleY(1);
+    transform-origin: 0% 0%;
   }
 }
+
 @keyframes rcSelectDropdownSlideUpOut {
   0% {
     opacity: 1;
-    transform-origin: 0% 0%;
     transform: scaleY(1);
+    transform-origin: 0% 0%;
   }
+
   100% {
     opacity: 0;
-    transform-origin: 0% 0%;
     transform: scaleY(0);
+    transform-origin: 0% 0%;
   }
 }
 
@@ -338,6 +342,7 @@ $select-prefix: "rc-select";
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }

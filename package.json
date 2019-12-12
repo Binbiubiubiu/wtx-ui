@@ -13,6 +13,11 @@
     "build:umd": "webpack --config scripts/webpack.config.js",
     "build:css": "cd scripts && gulp",
     "clean": "rimraf dist lib es",
+    "lint:script": "eslint . --ext '.js,.jsx,.ts,.tsx --fix'",
+    "lint:style": "stylelint 'components/**/*.scss' --syntax scss --fix",
+    "lint:fmt": "prettier --write \"components/**/*.{scss,js,jsx,ts,tsx}\" \"stories/*.mdx\"",
+    "lint": "npm run lint:script && npm run lint:style && npm run lint:fmt ",
+    "pretty-quick": "pretty-quick",
     "test": "jest --config jest.config.js",
     "test:coverage": "npm run test -- --coverage",
     "storybook": "start-storybook -p 6006 -s dist",
@@ -22,9 +27,17 @@
     "copy-assets-to-es": "cpx \"./components/**/*.{scss,png,jpg}\" ./es",
     "upgrade": "yarn upgrade"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://Wildlifes@github.com/Wildlifes/wtx-ui.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "storybook-deployer": {
     "gitUsername": "Wildlifes",
@@ -87,6 +100,8 @@
     "@types/react-dom": "^16.9.4",
     "@types/react-virtualized": "^9.21.6",
     "@types/video.js": "^7.3.3",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "cpx": "^1.5.0",
@@ -94,6 +109,15 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
@@ -105,6 +129,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
@@ -112,10 +137,15 @@
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "progress-bar-webpack-plugin": "^1.12.1",
     "react-docgen-typescript-loader": "^3.6.0",
     "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
+    "stylelint": "^12.0.0",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-standard": "^19.0.0",
     "terser-webpack-plugin": "^2.2.2",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.3",

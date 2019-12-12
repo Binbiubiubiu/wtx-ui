@@ -1,5 +1,4 @@
-@each $key,
-$item in (l: left, t: top, r: right, b: bottom) {
+@each $key, $item in (l: left, t: top, r: right, b: bottom) {
   .m-#{$key}-8 {
     margin-#{$item}: $--block-normal;
   }
@@ -19,7 +18,7 @@ $item in (l: left, t: top, r: right, b: bottom) {
 }
 
 .clear-fix ::after {
-  content: '';
   display: table;
-  clear  : both;
+  clear: both;
+  content: "";
 }

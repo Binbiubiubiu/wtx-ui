@@ -1,16 +1,16 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = [
   {
-    name: "@storybook/addon-docs/react/preset",
+    name: '@storybook/addon-docs/react/preset',
     options: {
       configureJSX: true,
       babelOptions: {},
       sourceLoaderOptions: {
-        parser: "typescript",
-        prettierConfig: { printWidth: 80, singleQuote: false },
-        uglyCommentsRegex: [/^eslint-.*/, /^global.*/]
-      }
+        parser: 'typescript',
+        prettierConfig: { printWidth: 100, singleQuote: true },
+        uglyCommentsRegex: [/^eslint-.*/, /^global.*/],
+      },
       // sourceLoaderOptions: {
       //   parser: "typescript",
       //   prettierConfig: {
@@ -22,6 +22,6 @@ module.exports = [
       //   },
       //   uglyCommentsRegex: [/^eslint-.*/, /^global.*/]
       // }
-    }
-  }
+    },
+  },
 ];

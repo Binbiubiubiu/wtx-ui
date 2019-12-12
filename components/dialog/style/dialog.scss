@@ -1,35 +1,40 @@
-.#{$prefixCls}dialog__theme-dark {
-  background: $dialog-background-1;
-  border: $dialog-border-1;
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
+
+$prefixCls: '#{$prefixlib}dialog';
+
+.#{$prefixCls}__theme-dark {
+  background: $--dialog-background-1;
+  border: $--dialog-border-1;
 }
 
-.#{$prefixCls}dialog__theme-light {
-  background: $dialog-background-2;
-  border: $dialog-border-2;
+.#{$prefixCls}__theme-light {
+  background: $--dialog-background-2;
+  border: $--dialog-border-2;
 }
 
-.#{$prefixCls}dialog__header {
+.#{$prefixCls}__header {
   display: flex;
   align-items: center;
-  padding: $blank-space-normal;
+  padding: $--block-normal;
 
-  .#{$prefixCls}dialog__title {
+  .#{$prefixCls}__title {
     font-size: px2rem(16);
-    color: $dialog-title-color;
     line-height: 1;
+    color: $--dialog-title-color;
   }
 
-  .#{$prefixCls}dialog__expand {
+  .#{$prefixCls}__expand {
     flex: auto;
     line-height: 0;
     text-align: right;
 
     & > * {
-      margin-right: $blank-space-normal;
+      margin-right: $--block-normal;
     }
   }
 }
 
-.#{$prefixCls}dialog__content {
-  padding: 0 $blank-space-normal $blank-space-normal $blank-space-normal;
+.#{$prefixCls}__content {
+  padding: 0 $--block-normal $--block-normal $--block-normal;
 }

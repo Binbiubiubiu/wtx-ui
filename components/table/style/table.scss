@@ -1,19 +1,24 @@
-.#{$prefixCls}table {
-  font-size : px2rem(14);
-  color     : #fff;
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
+
+$prefixCls: '#{$prefixlib}table';
+
+.#{$prefixCls} {
+  font-size: $--text-normal-size;
+  color: $--table-text-color;
   text-align: center;
 }
 
-.#{$prefixCls}table__header {
-  color: #6ae6ec;
+.#{$prefixCls}__header {
+  color: $--table-header-text-color;
 }
 
-.#{$prefixCls}table__loading {
+.#{$prefixCls}__loading {
   width: 100%;
 
   .loading-icon {
-    display       : inline-block;
+    display: inline-block;
+    margin-right: 30px;
     vertical-align: middle;
-    margin-right  : px2rem(30);
   }
 }

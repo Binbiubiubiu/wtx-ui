@@ -5,29 +5,29 @@
  * https://github.com/JeromeLin/dragon-ui/blob/dev/scripts/gulp/gulpfile.js
  */
 
-const path = require("path");
-const { parallel, src, dest } = require("gulp");
-const concat = require("gulp-concat");
-const sass = require("gulp-sass");
-const postcss = require("gulp-postcss");
-const cssnano = require("gulp-cssnano");
-const size = require("gulp-filesize");
-const ts = require("gulp-typescript");
-const sourcemaps = require("gulp-sourcemaps");
-const rename = require("gulp-rename");
-const flatten = require("gulp-flatten");
-const { name } = require("../package.json");
+const path = require('path');
+const { parallel, src, dest } = require('gulp');
+const concat = require('gulp-concat');
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const cssnano = require('gulp-cssnano');
+const size = require('gulp-filesize');
+const ts = require('gulp-typescript');
+const sourcemaps = require('gulp-sourcemaps');
+const rename = require('gulp-rename');
+const flatten = require('gulp-flatten');
+const { name } = require('../package.json');
 
-const r = p => path.resolve(__dirname, "..", p);
+const r = (p) => path.resolve(__dirname, '..', p);
 
 const DIR = {
-  assets: r("components/**/*.{scss,png}"),
-  sass: [r("components/**/theme/index.scss"), r("components/**/style/*.scss")],
-  css: [r("components/**/theme/index.tsx"), r("components/**/style/index.tsx")],
-  lib: r("lib"),
-  es: r("es"),
-  dist: r("dist"),
-  dist_css: r("dist/css")
+  assets: r('components/**/*.{scss,png}'),
+  sass: [r('components/**/theme/index.scss'), r('components/**/style/*.scss')],
+  css: [r('components/**/theme/index.tsx'), r('components/**/style/index.tsx')],
+  lib: r('lib'),
+  es: r('es'),
+  dist: r('dist'),
+  dist_css: r('dist/css'),
 };
 
 function copyAssetsToLibAndEs() {
@@ -37,31 +37,31 @@ function copyAssetsToLibAndEs() {
 }
 
 function copyAssetsToDist() {
-  return src(r("components/**/*.{png,jpg}"))
-    .pipe(flatten({ newPath: "/assets" }))
+  return src(r('components/**/*.{png,jpg}'))
+    .pipe(flatten({ newPath: '/assets' }))
     .pipe(dest(DIR.dist));
 }
 
 function copyFonts() {
   return src(
-    r("components/theme/fonts/**/*.{eot,otf,svg,ttf,woff,woff2}")
-  ).pipe(dest(DIR.dist + "/fonts"));
+    r('components/theme/fonts/**/*.{eot,otf,svg,ttf,woff,woff2}'),
+  ).pipe(dest(`${DIR.dist}/fonts`));
 }
 
 function createCss() {
   return src(DIR.sass)
     .pipe(
       sass.sync({
-        outputStyle: "expanded"
-      })
+        outputStyle: 'expanded',
+      }),
     )
     .pipe(postcss())
     .pipe(dest(DIR.lib))
     .pipe(dest(DIR.es));
 }
 
-const tsconfigPath = r("tsconfig.json");
-const cssFileName = "css";
+const tsconfigPath = r('tsconfig.json');
+const cssFileName = 'css';
 
 function createCssInCjs() {
   const ts_cjs = ts.createProject(tsconfigPath, {});
@@ -74,8 +74,8 @@ function createCssInCjs() {
 
 function createCssInEs() {
   const ts_es6 = ts.createProject(tsconfigPath, {
-    module: "ES6",
-    target: "es6"
+    module: 'ES6',
+    target: 'es6',
   });
 
   return src(DIR.css)
@@ -89,13 +89,13 @@ function createCssInUmd() {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        outputStyle: "expanded"
-      })
+        outputStyle: 'expanded',
+      }),
     )
     .pipe(postcss())
     .pipe(concat(`${name}.css`))
     .pipe(size())
-    .pipe(sourcemaps.write("./"))
+    .pipe(sourcemaps.write('./'))
     .pipe(dest(DIR.dist_css));
 }
 
@@ -104,14 +104,14 @@ function createMinCssInUmd() {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        outputStyle: "compressed"
-      })
+        outputStyle: 'compressed',
+      }),
     )
     .pipe(postcss())
     .pipe(concat(`${name}.min.css`))
     .pipe(cssnano())
     .pipe(size())
-    .pipe(sourcemaps.write("./"))
+    .pipe(sourcemaps.write('./'))
     .pipe(dest(DIR.dist_css));
 }
 
@@ -123,5 +123,5 @@ exports.default = parallel(
   createCssInCjs,
   createCssInEs,
   createCssInUmd,
-  createMinCssInUmd
+  createMinCssInUmd,
 );

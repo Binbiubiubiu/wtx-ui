@@ -1,10 +1,13 @@
-import React, { FC, ReactNode, MouseEventHandler } from "react";
-import classnames from "classnames";
-import "./style/dialog.scss";
-import ImageIcon from "../icon";
+import React, { FC, ReactNode, MouseEventHandler, CSSProperties } from 'react';
+import cls from 'classnames';
+import './style/dialog.scss';
+import ImageIcon from '../icon';
+
+import { prefixlib } from '../_util/constants';
 
 const defaultProps = {
-  theme: "dark" as "dark" | "light"
+  prefixCls: `${prefixlib}dialog`,
+  theme: 'dark' as 'dark' | 'light',
 };
 
 export interface DialogProps {
@@ -13,7 +16,7 @@ export interface DialogProps {
    *
    * @default "dark"
    */
-  theme?: "dark" | "light";
+  theme?: 'dark' | 'light';
   /**
    *  弹窗的图标
    */
@@ -30,34 +33,34 @@ export interface DialogProps {
   onClose?: MouseEventHandler<Element>;
   /** 弹窗最小化回调 */
   onMinimize?: MouseEventHandler<Element>;
-  [props: string]: any;
+  /** 自定义class */
+  className?: string;
+  /** 样式前缀 */
+  prefixCls?: string;
+  /** 自定义style */
+  style?: CSSProperties;
 }
 
-export const Dialog: FC<DialogProps> = props => {
-  const {
-    theme,
-    titleIcon,
-    title,
-    onClose,
-    onMinimize,
-    headerExpandRender,
-    className,
-    children,
-    ...rest
-  } = props;
+export const Dialog: FC<DialogProps> = ({
+  prefixCls,
+  theme,
+  titleIcon,
+  title,
+  onClose,
+  onMinimize,
+  headerExpandRender,
+  className,
+  children,
+  ...rest
+}) => {
   // (titleIcon as { path: "" }).path = "";
 
   return (
-    <section
-      className={classnames(`za-dialog__theme-${theme}`, className)}
-      {...rest}
-    >
-      <div className="za-dialog__header">
+    <section className={cls(`${prefixCls}__theme-${theme}`, className)} {...rest}>
+      <div className={`${prefixCls}__header`}>
         {titleIcon && titleIcon}
-        <span className="za-dialog__title">{title}</span>
-        <div className="za-dialog__expand">
-          {headerExpandRender && headerExpandRender()}
-        </div>
+        <span className={`${prefixCls}__title`}>{title}</span>
+        <div className={`${prefixCls}__expand`}>{headerExpandRender && headerExpandRender()}</div>
         {onClose && (
           <ImageIcon
             path="/assets/dialog/close-icon.png"
@@ -75,7 +78,7 @@ export const Dialog: FC<DialogProps> = props => {
           />
         )}
       </div>
-      <div className="za-dialog__content">{children}</div>
+      <div className={`${prefixCls}__content`}>{children}</div>
     </section>
   );
 };

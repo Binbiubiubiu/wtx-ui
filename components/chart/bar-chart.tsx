@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 export interface BarChartProps {
   /**
@@ -7,8 +7,6 @@ export interface BarChartProps {
   data?: any[];
 }
 
-export const BarChart: FC<BarChartProps> = () => {
-  return <div></div>;
-};
+export const BarChart: FC<BarChartProps> = () => <div />;
 
 export default BarChart;

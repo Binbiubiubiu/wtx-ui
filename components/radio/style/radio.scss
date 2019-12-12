@@ -1,33 +1,33 @@
-.#{$prefixCls}radio {
-    position : relative;
-    display  : inline-block;
-    min-width: px2rem(60);
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
 
-    margin-right: px2rem(10);
-    padding     : px2rem(6);
+$prefixCls: '#{$prefixlib}radio';
 
-    background-color: transparent;
-    color           : #fff;
-    border          : solid 1px #2480db;
+.#{$prefixCls} {
+  position: relative;
+  display: inline-block;
+  min-width: 60px;
+  padding: 6px;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: solid 1px #2480db;
 
-    font-size  : px2rem(14);
-    text-align : center;
-    line-height: 1;
+  &:last-child {
+    margin-right: 0;
+  }
 
-    cursor: pointer;
-
-    &:last-child {
-        margin-right: 0;
-    }
-
-    .#{$prefixCls}radio__input {
-        position: absolute;
-        z-index : -1;
-        opacity : 0;
-    }
-
+  .#{$prefixCls}__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
 }
 
-.#{$prefixCls}radio__checked {
-    background-color: $za-btn-primary-bg;
+.#{$prefixCls}__checked {
+  background-color: $--color-primary;
 }

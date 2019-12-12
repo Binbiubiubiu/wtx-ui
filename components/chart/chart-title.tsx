@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import "./style/chart-title.scss";
+import React, { FC } from 'react';
 
 export interface ChartTitleProps {
   /** 图表标题 */

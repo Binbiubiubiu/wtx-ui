@@ -3,45 +3,55 @@
 $prefixlib: "wtx-";
 
 $--block-normal: 8px;
-$--block-big   : 10px;
+$--block-big: 10px;
 
 // *************** text ***************
 $--text-normal-color: $--color-white;
-$--text-title-color : $--color-green-1;
+$--text-title-color: $--color-green-1;
 
 $--text-normal-size: 14px;
 
 // *************** button ***************
-$--button-text-color : $--color-white;
-$--button-text-size  : $--text-normal-size;
+$--button-text-color: $--color-white;
+$--button-text-size: $--text-normal-size;
 
-$--button-primary-bg : $--color-primary;
-$--button-actived-bg : $--color-success;
+$--button-primary-bg: $--color-primary;
+$--button-actived-bg: $--color-success;
 $--button-disabled-bg: $--color-disabled;
-$--button-danger-bg  : $--color-danger;
+$--button-danger-bg: $--color-danger;
 
 // *************** tags ***************
-$--badge-text-color:$--color-white;
-$--badge-text-size : $--text-normal-size;
+$--badge-text-color: $--color-white;
+$--badge-text-size: $--text-normal-size;
 
-$--badge-primary-bg  : $--color-primary;
-$--badge-success-bg  : $--color-success;
-$--badge-disabled-bg : $--color-disabled;
-$--badge-danger-bg   : $--color-danger;
-$--badge-warning-bg  : $--color-warning;
+$--badge-primary-bg: $--color-primary;
+$--badge-success-bg: $--color-success;
+$--badge-disabled-bg: $--color-disabled;
+$--badge-danger-bg: $--color-danger;
+$--badge-warning-bg: $--color-warning;
 
 $--badge-bg-1: $--color-green-2;
 $--badge-bg-2: $--color-brown-1;
 $--badge-bg-3: $--color-green-3;
 
 // *****************  card  ******************
-$--card-text-color       : $--color-green-4;
+$--card-text-color: $--color-green-4;
 $--inline-card-text-color: $--color-green-1;
 
 // *****************  dialog  ******************
-$dialog-background-1: opacify($--color-green-6, 0.7);
-$dialog-border-1    : 1px solid $--color-green-3;
-$dialog-title-color : $--color-green-5;
+$--dialog-background-1: opacify($--color-green-6, 0.7);
+$--dialog-border-1: 1px solid $--color-green-3;
+$--dialog-title-color: $--color-green-5;
 
-$dialog-background-2: opacify($--color-blue-1, 0.7);
-$dialog-border-2 : 1px solid $--color-blue-2;
+$--dialog-background-2: opacify($--color-blue-1, 0.7);
+$--dialog-border-2: 1px solid $--color-blue-2;
+
+// *****************  select  ******************
+$--select-text-color: $--color-blue-2;
+$--select-bg: $--color-white;
+$--select-border: 1px solid $--color-blue-3;
+$--select-dropdown-border: 1px solid $--color-gray-1;
+
+// *****************  table  ******************
+$--table-text-color: $--color-white;
+$--table-header-text-color: $--color-green-1;

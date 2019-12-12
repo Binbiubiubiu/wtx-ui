@@ -2,7 +2,7 @@ import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { action } from "@storybook/addon-actions";
 import { isCodeShow } from "./config";
 
-import Card,{InlineCard} from "../components/card";
+import Card, { InlineCard } from "../components/card";
 
 <Meta title="公共组件|卡片" component={Card} />
 
@@ -26,7 +26,7 @@ import Card,{InlineCard} from "../components/card";
       }
       title="摄像头类型(种)"
       content="6"
-    ></Card>
+    />
   </Story>
 </Preview>
 
@@ -34,6 +34,6 @@ import Card,{InlineCard} from "../components/card";
 
 <Preview withSource={isCodeShow}>
   <Story name="内联样式">
-    <InlineCard title="消防联网设备总数(个)" content="300"/>
+    <InlineCard title="消防联网设备总数(个)" content="300" />
   </Story>
 </Preview>

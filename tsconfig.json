@@ -1,25 +1,22 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
-    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "target": "es5",
+    "lib": ["es5", "esnext", "dom"],
     "sourceMap": true,
     "allowJs": false,
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDirs": ["src", "components", "stories"],
+    "rootDirs": ["components", "stories"],
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "components/*": ["components/*"]
-    },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
+    "noEmitHelpers": true,
     "removeComments": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -27,6 +24,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["src/**/*", "components/**/*"],
+  "include": ["components/**/*"],
   "exclude": ["node_modules", "**/__tests__"]
 }

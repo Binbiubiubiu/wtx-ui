@@ -12,11 +12,11 @@ const { name, version, description } = require("../package.json");
 const r = p => path.resolve(__dirname, "..", p);
 
 const LOGO = `
-           __                   _ 
+           __                   _
  _      __/ /__  __      __  __(_)
-| | /| / / __/ |/_/_____/ / / / / 
-| |/ |/ / /__>  </_____/ /_/ / /  
-|__/|__/\\__/_/|_|      \\__,_/_/  
+| | /| / / __/ |/_/_____/ / / / /
+| |/ |/ / /__>  </_____/ /_/ / /
+|__/|__/\\__/_/|_|      \\__,_/_/
 `;
 
 module.exports = {
@@ -32,7 +32,8 @@ module.exports = {
     filename: "[name].min.js"
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: {}
   },
   externals: {
     react: {
@@ -46,7 +47,7 @@ module.exports = {
       commonjs2: "react-dom",
       commonjs: "react-dom",
       amd: "react-dom"
-    },
+    }
     // echarts: "echarts",
     // "video.js": "video.js"
   },
@@ -61,27 +62,27 @@ module.exports = {
         ],
         exclude: /node_modules/,
         include: [r("components"), r("src")]
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { importLoaders: 2 } },
-          "postcss-loader",
-          "sass-loader"
-        ]
-      },
-      {
-        test: /\.(png|jpe?g|gif|woff|eot|ttf|svg)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 10000
-            }
-          }
-        ]
       }
+      // {
+      //   test: /\.(sa|sc|c)ss$/,
+      //   use: [
+      //     MiniCssExtractPlugin.loader,
+      //     { loader: "css-loader", options: { importLoaders: 2 } },
+      //     "postcss-loader",
+      //     "sass-loader"
+      //   ]
+      // },
+      // {
+      //   test: /\.(png|jpe?g|gif|woff|eot|ttf|svg)$/,
+      //   use: [
+      //     {
+      //       loader: "url-loader",
+      //       options: {
+      //         limit: false
+      //       }
+      //     }
+      //   ]
+      // }
     ]
   },
   optimization: {
