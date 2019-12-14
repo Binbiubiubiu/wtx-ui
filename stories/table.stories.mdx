@@ -1,0 +1,45 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+
+import { isCodeShow } from './config';
+import Table, { Column } from 'components/table';
+import 'components/table/style';
+
+<Meta title="Table 表格" component={Table} />
+
+# Table 表格
+
+用于展示多条结构类似的数据
+
+### 基础用法
+
+正常播放状态
+
+<Preview withSource={isCodeShow}>
+  <Story name="基础用法">
+     <div style={{ width: 400, height: 276 }}>
+      <Table height={300} headerHeight={20} rowHeight={40}>
+        <Column
+          label="登记时间"
+          dataKey="time"
+          width={100}
+          cellRenderer={({ cellData }) => (
+            <span>
+              {cellData ? cellData.substr(6) : ""}
+              <br />
+              {cellData ? cellData.substr(0, 5) : ""}
+            </span>
+          )}
+        />
+        <Column label="访客姓名" dataKey="name" flexGrow={1} width={60} />
+        <Column label="性别" dataKey="sex" width={30} />
+        <Column label="联系电话" dataKey="phone" width={100} />
+        <Column label="去访小区" dataKey="house" flexGrow={1} width={60} />
+      </Table>
+    </div>
+  </Story>
+</Preview>
+
+## Attributes
+
+<Props of={Table} />

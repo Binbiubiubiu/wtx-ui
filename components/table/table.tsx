@@ -1,4 +1,5 @@
 import React, { Component, MouseEvent, CSSProperties } from 'react';
+// import 'react-virtualized/styles.css';
 import cls from 'classnames';
 import { Table, AutoSizer, InfiniteLoader, TableRowRenderer } from 'react-virtualized';
 import Loading from '../loading';
@@ -101,8 +102,8 @@ export class InfiniteTable extends Component<InfiniteTableProps, InfiniteTableSt
     return !!list[index];
   }
 
+  // @ts-ignore
   _loadMoreRows({ startIndex, stopIndex }: any) {
-    console.log(startIndex, stopIndex);
     setTimeout(() => {
       this.setState(
         (preState: any) => ({

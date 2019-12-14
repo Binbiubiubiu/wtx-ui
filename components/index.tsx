@@ -1,8 +1,9 @@
-export { default as Button } from './button';
-export { default as Badge } from './badge';
+export * from './button';
+export { default as Tag } from './tag';
 export { default as Card } from './card';
 export { default as Row } from './row';
 export { LineChart, PieChart, RadarChart } from './chart';
+export { Radio, RadioButton, RadioGroup } from './radio';
 export { default as Table } from './table';
 export { default as Select } from './select';
 export { default as Icon } from './icon';

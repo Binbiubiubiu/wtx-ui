@@ -4,10 +4,10 @@
 $prefixCls: '#{$prefixlib}inline-card';
 
 .#{$prefixCls} {
-  display: inline-block;
-  color: $--inline-card-text-color;
-  text-align: center;
   border-right: 1px solid $--inline-card-text-color;
+  color: $--inline-card-text-color;
+  display: inline-block;
+  text-align: center;
 
   &:last-of-type {
     border-right: none;

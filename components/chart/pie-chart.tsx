@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { Component, CSSProperties } from 'react';
 import echarts, { ECharts, EChartOption } from '../_lib/echarts';
 
 export interface PieChartProps {
@@ -6,7 +6,12 @@ export interface PieChartProps {
    * 数据
    */
   data: any[];
-  [props: string]: any;
+  /** 自定义class */
+  className?: string;
+  /** 样式前缀 */
+  prefixCls?: string;
+  /** 自定义style */
+  style?: CSSProperties;
 }
 
 export class PieChart extends Component<PieChartProps> {
@@ -17,7 +22,7 @@ export class PieChart extends Component<PieChartProps> {
   constructor(props: PieChartProps) {
     super(props);
 
-    this.chartRef = createRef();
+    this.chartRef = React.createRef();
   }
 
   componentDidMount() {

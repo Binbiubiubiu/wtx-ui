@@ -4,27 +4,27 @@
 $prefixCls: '#{$prefixlib}radio';
 
 .#{$prefixCls} {
-  position: relative;
-  display: inline-block;
-  min-width: 60px;
-  padding: 6px;
-  margin-right: 10px;
-  font-size: 14px;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
   background-color: transparent;
   border: solid 1px #2480db;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  margin-right: 10px;
+  min-width: 60px;
+  padding: 6px;
+  position: relative;
+  text-align: center;
 
   &:last-child {
     margin-right: 0;
   }
 
   .#{$prefixCls}__input {
+    opacity: 0;
     position: absolute;
     z-index: -1;
-    opacity: 0;
   }
 }
 

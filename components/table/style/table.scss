@@ -4,8 +4,8 @@
 $prefixCls: '#{$prefixlib}table';
 
 .#{$prefixCls} {
-  font-size: $--text-normal-size;
   color: $--table-text-color;
+  font-size: $--text-normal-size;
   text-align: center;
 }
 

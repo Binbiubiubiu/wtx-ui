@@ -1,0 +1,29 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+
+import { isCodeShow } from './config';
+import Select, { Option } from '../components/select';
+
+<Meta title="Select 选择器" component={Select} />
+
+# Select 选择器
+
+使用下拉菜单展示并选择内容
+
+### 基础用法
+
+适用广泛的基础单选
+
+<Preview withSource={isCodeShow}>
+  <Story name="基础用法">
+    <Select>
+      <Option value="jack">jack</Option>
+      <Option value="lucy">lucy</Option>
+      <Option value="yiminghe">yiminghe</Option>
+    </Select>
+  </Story>
+</Preview>
+
+## Attributes
+
+<Props of={Select} />

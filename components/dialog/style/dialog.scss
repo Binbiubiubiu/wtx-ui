@@ -14,14 +14,14 @@ $prefixCls: '#{$prefixlib}dialog';
 }
 
 .#{$prefixCls}__header {
-  display: flex;
   align-items: center;
+  display: flex;
   padding: $--block-normal;
 
   .#{$prefixCls}__title {
-    font-size: px2rem(16);
-    line-height: 1;
     color: $--dialog-title-color;
+    font-size: 16px;
+    line-height: 1;
   }
 
   .#{$prefixCls}__expand {

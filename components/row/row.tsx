@@ -1,6 +1,5 @@
 import React, { FC, CSSProperties } from 'react';
 import cls from 'classnames';
-import { px2rem } from '../_util/viewports';
 
 import { prefixlib } from '../_util/constants';
 
@@ -60,7 +59,7 @@ export const Row: FC<RowProps> = ({
       {gutter
         ? React.Children.map(children, (child: any) =>
             React.cloneElement(child, {
-              style: { margin: `0 ${px2rem(+gutter / 2)}rem` },
+              style: { margin: `0 ${+gutter / 2}` },
             }),
           )
         : children}

@@ -1,4 +1,4 @@
-const TokenKey = "wtx-monitor-token";
+const TokenKey = 'wtx-monitor-token';
 
 export function getToken() {
   return window.sessionStorage.getItem(TokenKey);

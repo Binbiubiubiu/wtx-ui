@@ -1,17 +1,17 @@
-import React, { Component, CSSProperties } from "react";
-import cls from "classnames";
-import videojs from "video.js";
-import { shallowMerge } from "../_util/data";
-import defaultVideoPlayerConfig from "./utils/default-config";
-import { analyzeTypeOfVideo, isVaildURL } from "./utils";
-import { px2rem } from "../_util/viewports";
+import React, { Component, CSSProperties } from 'react';
+import cls from 'classnames';
+import videojs from 'video.js';
+// import 'video.js/dist/video-js.css';
+import { shallowMerge } from '../_util';
+import defaultVideoPlayerConfig from './utils/default-config';
+import { analyzeTypeOfVideo, isVaildURL } from './utils';
 
-import { prefixlib } from "../_util/constants";
+import { prefixlib } from '../_util/constants';
 
 const defaultProps = {
   prefixCls: `${prefixlib}video-player`,
   width: 400,
-  height: 240
+  height: 240,
 };
 
 export interface VideoPlayerProps {
@@ -58,7 +58,7 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
     this.videoNode = React.createRef();
     this.state = {
       isVaildURL: true,
-      error: false
+      error: false,
     };
   }
 
@@ -69,7 +69,7 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
     if (!isVaildURL(src)) {
       this.setState({
         error: true,
-        isVaildURL: false
+        isVaildURL: false,
       });
       return;
     }
@@ -78,14 +78,14 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
       sources: [
         {
           src,
-          type: analyzeTypeOfVideo(src)
-        }
-      ]
+          type: analyzeTypeOfVideo(src),
+        },
+      ],
     });
     // console.log(playerConfig);
     // instantiate Video.js
     this.player = videojs(this.videoNode.current, playerConfig);
-    this.player.on("error", this.addVideoPlayerErrorListener);
+    this.player.on('error', this.addVideoPlayerErrorListener);
   }
 
   /** videojs  视频流获取失败 错误处理 */
@@ -93,9 +93,9 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
     this.setState(() => ({ error: true }));
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if (this.player) {
-      this.player.off("error", this.addVideoPlayerErrorListener);
+      this.player.off('error', this.addVideoPlayerErrorListener);
       this.player.dispose();
       this.player = null;
     }
@@ -104,26 +104,24 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
   renderError() {
     const { isVaildURL } = this.state;
     const { prefixCls } = this.props;
-    return (
-      <div className={`${prefixCls}__error`}>
-        {isVaildURL ? "视频播放异常" : "未安装"}
-      </div>
-    );
+
+    return <div className={`${prefixCls}__error`}>{isVaildURL ? '视频播放异常' : '未安装'}</div>;
   }
 
   render() {
-    const { prefixCls, width, height } = this.props;
+    const { prefixCls, width, height, style, className } = this.props;
     const { error } = this.state;
 
     return (
       <div
-        className={`${prefixCls}__wrapper`}
+        className={cls(`${prefixCls}__wrapper`, className)}
         style={{
-          width: `${px2rem(width)}rem`,
-          height: `${px2rem(height)}rem`
+          width,
+          height,
+          ...style,
         }}
       >
-        <video ref={this.videoNode} className={cls("video-js", prefixCls)} />
+        <video ref={this.videoNode} className={cls('video-js', prefixCls)} />
         {error && this.renderError()}
       </div>
     );

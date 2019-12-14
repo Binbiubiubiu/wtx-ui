@@ -5,18 +5,18 @@ $prefixCls: 'rc-select';
 
 @mixin search-input-without-border() {
   .#{$prefixCls}-selection-search-input {
-    width: 100%;
     background: rgba(255, 0, 0, 0.2);
     border: none;
     outline: none;
+    width: 100%;
   }
 }
 
 .#{$prefixCls} {
-  position: relative;
   display: inline-block;
-  width: 100px;
   font-size: 12px;
+  position: relative;
+  width: 100px;
 
   &-disabled {
     &,
@@ -33,16 +33,16 @@ $prefixCls: 'rc-select';
     .#{$prefixCls}-loading {
       .#{$prefixCls}-arrow {
         &-icon::after {
-          box-sizing: border-box;
-          width: 12px;
-          height: 12px;
-          margin-top: 4px;
+          animation: rcSelectLoadingIcon 0.5s infinite;
           border: 2px solid #999;
-          border-top-color: transparent;
           border-bottom-color: transparent;
           border-radius: 100%;
+          border-top-color: transparent;
+          box-sizing: border-box;
+          height: 12px;
+          margin-top: 4px;
           transform: none;
-          animation: rcSelectLoadingIcon 0.5s infinite;
+          width: 12px;
         }
       }
     }
@@ -56,8 +56,8 @@ $prefixCls: 'rc-select';
   // --------------- Single ----------------
   &-single {
     .#{$prefixCls}-selector {
-      position: relative;
       display: flex;
+      position: relative;
 
       .#{$prefixCls}-selection-search {
         width: 100%;
@@ -69,21 +69,21 @@ $prefixCls: 'rc-select';
 
       .#{$prefixCls}-selection-item,
       .#{$prefixCls}-selection-placeholder {
-        position: absolute;
-        top: 1px;
-        right: px2rem(34);
-        left: px2rem(17);
+        left: 17px;
         pointer-events: none;
+        position: absolute;
+        right: 34px;
+        top: 1px;
       }
     }
 
     // Not customize
     &:not(.#{$prefixCls}-customize-input) {
       .#{$prefixCls}-selector {
-        padding: 0 px2rem(32) 0 px2rem(17);
         background-color: $--select-bg;
         border: $--select-border;
-        border-radius: px2rem(16);
+        border-radius: 16px;
+        padding: 0 32px 0 17px;
 
         @include search-input-without-border();
       }
@@ -92,17 +92,17 @@ $prefixCls: 'rc-select';
 
   // -------------- Multiple ---------------
   &-multiple .#{$prefixCls}-selector {
+    border: 1px solid #000;
     display: flex;
     flex-wrap: wrap;
     padding: 1px;
-    border: 1px solid #000;
 
     .#{$prefixCls}-selection-item {
-      flex: none;
-      padding: 0 8px;
-      margin-right: 2px;
       background: #bbb;
       border-radius: 4px;
+      flex: none;
+      margin-right: 2px;
+      padding: 0 8px;
 
       &-disabled {
         cursor: not-allowed;
@@ -115,18 +115,18 @@ $prefixCls: 'rc-select';
 
       &-input,
       &-mirror {
-        padding: 1px;
         font-family: system-ui;
+        padding: 1px;
       }
 
       &-mirror {
+        left: 0;
         position: absolute;
         position: none;
         top: 0;
-        left: 0;
-        z-index: 999;
-        white-space: nowrap;
         visibility: hidden;
+        white-space: nowrap;
+        z-index: 999;
       }
     }
 
@@ -141,8 +141,8 @@ $prefixCls: 'rc-select';
 
     .#{$prefixCls}-clear {
       position: absolute;
-      top: 0;
       right: 20px;
+      top: 0;
     }
   }
 
@@ -152,19 +152,19 @@ $prefixCls: 'rc-select';
     }
 
     .#{$prefixCls}-arrow {
-      position: absolute;
-      top: 0;
-      right: 5px;
       pointer-events: none;
+      position: absolute;
+      right: 5px;
+      top: 0;
 
       &-icon::after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        content: '';
         border: 4px solid transparent;
         border-top-color: $--select-text-color;
+        content: '';
+        display: inline-block;
+        height: 0;
         transform: translateY(4px);
+        width: 0;
       }
     }
   }
@@ -179,11 +179,11 @@ $prefixCls: 'rc-select';
 
   // ============== Dropdown ===============
   &-dropdown {
-    // min-height: 100px;
-    position: absolute;
     background: #fff;
     border: $--select-dropdown-border;
-    border-radius: px2rem(10);
+    border-radius: 10px;
+    // min-height: 100px;
+    position: absolute;
 
     &-hidden {
       display: none;
@@ -192,32 +192,32 @@ $prefixCls: 'rc-select';
 
   // =============== Option ================
   &-item {
-    padding: 4px 16px;
     font-size: 16px;
     line-height: 1.5;
+    padding: 4px 16px;
 
     // >>> Group
     &-group {
+      color: #999;
       font-size: 80%;
       font-weight: bold;
-      color: #999;
     }
 
     // >>> Option
     &-option {
+      font-size: 14px;
       position: relative;
-      font-size: px2rem(14);
 
       &-grouped {
         padding-left: 24px;
       }
 
       .#{$prefixCls}-item-option-state {
-        position: absolute;
-        top: 4px;
-        right: 0;
         display: none;
         pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 4px;
       }
 
       // ------- Active -------
@@ -264,9 +264,9 @@ $prefixCls: 'rc-select';
 }
 
 @mixin effect() {
-  transform-origin: 0 0;
   animation-duration: 0.3s;
   animation-fill-mode: both;
+  transform-origin: 0 0;
 }
 
 .#{$prefixCls}-dropdown {
@@ -274,17 +274,17 @@ $prefixCls: 'rc-select';
   &-slide-up-appear {
     @include effect();
 
-    opacity: 0;
     animation-play-state: paused;
     animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+    opacity: 0;
   }
 
   &-slide-up-leave {
     @include effect();
 
-    opacity: 1;
     animation-play-state: paused;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+    opacity: 1;
   }
 
   &-slide-up-enter.#{$prefixCls}-dropdown-slide-up-enter-active.#{$prefixCls}-dropdown-placement-bottomLeft,

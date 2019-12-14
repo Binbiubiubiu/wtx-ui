@@ -1,29 +1,29 @@
-@import "../../theme/var/index.scss";
-@import "../../theme/mixin.scss";
+@import '../../theme/var/index.scss';
+@import '../../theme/mixin.scss';
 
-$prefixCls: "#{$prefixlib}video-player";
+$prefixCls: '#{$prefixlib}video-player';
 
 .#{$prefixCls}__wrapper {
-  position: relative;
   border: solid 1px #87a8ff;
+  position: relative;
 
   .#{$prefixCls} {
-    width: 100%;
     height: 100%;
     object-fit: cover;
+    width: 100%;
   }
 
   .#{$prefixCls}__error {
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    font-size: 24px;
+    height: 100%;
+    justify-content: center;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    height: 100%;
-    font-size: px2rem(24);
-    color: #fff;
-    background-color: #000;
   }
 }

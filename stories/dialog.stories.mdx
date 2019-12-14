@@ -1,0 +1,61 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+
+import { isCodeShow } from './config';
+import Dialog from 'components/dialog';
+import Button from 'components/button';
+
+<Meta title="Dialog 弹窗" component={Dialog} />
+
+# Dialog 弹窗
+
+局部展示需要的信息，可以最小化或关闭。
+
+### 基础用法
+
+弹出弹窗
+
+<Preview withSource={isCodeShow}>
+  <Story name="基础用法">
+    <Dialog
+      titleIcon={<Icon
+        className="m-r-8"
+        path="assets/Q017.png"
+        width="16"
+        height="18"
+      />}
+      title="视频分析"
+      headerExpandRender={() => <Button>近七天记录</Button>}
+      onClose={action("dialog close")}
+    >
+      <div style={{ width: 100, height: 100 }} />
+    </Dialog>
+  </Story>
+</Preview>
+
+### 明亮主题
+
+明亮主题风格弹窗
+
+<Preview withSource={isCodeShow}>
+  <Story name="明亮主题">
+    <Dialog
+      titleIcon={<Icon
+        className="m-r-8"
+        path="assets/Q017.png"
+        width="16"
+        height="18"
+      />}
+      theme="light"
+      title="视频分析"
+      headerExpandRender={() => <Button>近七天记录</Button>}
+      onClose={action("dialog close")}
+    >
+      <div style={{ width: 100, height: 100 }} />
+    </Dialog>
+  </Story>
+</Preview>
+
+## Attributes
+
+<Props of={Dialog} />

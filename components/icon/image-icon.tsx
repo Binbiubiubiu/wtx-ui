@@ -1,12 +1,12 @@
-import React, { FC, MouseEventHandler, CSSProperties } from "react";
-import cls from "classnames";
+import React, { FC, MouseEventHandler, CSSProperties } from 'react';
+import cls from 'classnames';
 
-import { prefixlib } from "../_util/constants";
+import { prefixlib } from '../_util/constants';
 
 const defaultProps = {
   prefixCls: `${prefixlib}image-icon`,
   width: 40,
-  height: 40
+  height: 40,
 };
 
 export interface ImageIconProps {
@@ -35,22 +35,9 @@ export interface ImageIconProps {
 }
 
 export const ImageIcon: FC<ImageIconProps> = props => {
-  const {
-    prefixCls,
-    path,
-    width,
-    height,
-    onClick,
-    className,
-    style,
-    ...rest
-  } = props;
+  const { prefixCls, path, width, height, onClick, className, style, ...rest } = props;
 
-  const IconCls = cls(
-    prefixCls,
-    { [`${prefixCls}__clickable`]: !!onClick },
-    className
-  );
+  const IconCls = cls(prefixCls, { [`${prefixCls}__clickable`]: !!onClick }, className);
 
   return (
     <img

@@ -1,1 +1,1 @@
-import "./chart-title.scss";
+import './chart-title.scss';

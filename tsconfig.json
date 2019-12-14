@@ -16,14 +16,13 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
-    "noEmitHelpers": true,
+    "suppressImplicitAnyIndexErrors": true,
     "removeComments": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["components/**/*"],
-  "exclude": ["node_modules", "**/__tests__"]
+  "include": ["components"],
+  "exclude": ["node_modules", "lib", "es", "**/__tests__"]
 }

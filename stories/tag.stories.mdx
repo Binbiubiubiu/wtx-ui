@@ -1,0 +1,89 @@
+import { Meta, Story, Preview, Props, SourceState } from '@storybook/addon-docs/blocks';
+import { isCodeShow } from './config';
+import Tag from 'components/tag';
+
+<Meta title="Tag 标签" component={Tag} />
+
+# Tag 标签
+
+用于标记状态。
+
+### 默认样式
+
+<Preview withSource={isCodeShow}>
+  <Story name="默认样式">
+    <Tag>默认样式</Tag>
+  </Story>
+</Preview>
+
+### 圆角标签
+
+<Preview withSource={isCodeShow}>
+  <Story name="圆角标签">
+    <Tag radius>圆角标签</Tag>
+  </Story>
+</Preview>
+
+### 正常状态
+
+<Preview withSource={isCodeShow}>
+  <Story name="正常状态">
+    <Tag type="ok" radius>
+      正常状态
+    </Tag>
+  </Story>
+</Preview>
+
+### 异常状态
+
+<Preview withSource={isCodeShow}>
+  <Story name="异常状态">
+    <Tag type="error" radius>
+      异常状态
+    </Tag>
+  </Story>
+</Preview>
+
+### 警告状态
+
+<Preview withSource={isCodeShow}>
+  <Story name="警告状态">
+    <Tag type="warning" radius>
+      警告状态
+    </Tag>
+  </Story>
+</Preview>
+
+### 禁用状态
+
+<Preview withSource={isCodeShow}>
+  <Story name="禁用状态">
+    <Tag type="disabled" radius>
+      禁用状态
+    </Tag>
+  </Story>
+</Preview>
+
+### 在线状态
+
+<Preview withSource={isCodeShow}>
+  <Story name="在线状态">
+    <Tag type="online" radius>
+      在线状态
+    </Tag>
+  </Story>
+</Preview>
+
+### 离线状态
+
+<Preview withSource={isCodeShow}>
+  <Story name="离线状态">
+    <Tag type="outline" radius>
+      离线状态
+    </Tag>
+  </Story>
+</Preview>
+
+## Attributes
+
+<Props of={Tag} />

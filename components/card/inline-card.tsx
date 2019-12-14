@@ -28,11 +28,11 @@ export const InlineCard: FC<InlineCardProps> = ({
   ...rest
 }) => {
   const contentCls = cls(`${prefixCls}__content`, {
-    'led-num': !isNaN(+content),
+    'led-num': !Number.isNaN(+content),
   });
 
   return (
-    <dl className={prefixCls} {...rest}>
+    <dl className={cls(prefixCls, className)} {...rest}>
       <dt className={`${prefixCls}__title`}>{title}</dt>
       <dd className={contentCls}>{content}</dd>
     </dl>

@@ -1,8 +1,8 @@
-import React, { FC, CSSProperties } from "react";
-import { ReactSVG } from "react-svg";
+import React, { FC, CSSProperties } from 'react';
+import { ReactSVG } from 'react-svg';
 
 const defaultProps = {
-  icon: "bars"
+  icon: 'bars',
 };
 
 export type LoadingProps = {

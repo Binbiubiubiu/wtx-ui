@@ -4,14 +4,14 @@
 $prefixCls: '#{$prefixlib}card';
 
 .#{$prefixCls} {
-  display: inline-flex;
   align-items: center;
-  width: auto;
-  min-width: 234px;
-  padding: 16px 24px 12px;
-  color: $--card-text-color;
   background-color: $--dialog-background-1;
   border-bottom: 1px solid $--dialog-title-color;
+  color: $--card-text-color;
+  display: inline-flex;
+  min-width: 234px;
+  padding: 16px 24px 12px;
+  width: auto;
 
   &:last-child {
     margin-right: 0;

@@ -1,29 +1,49 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { action } from "@storybook/addon-actions";
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
 
-import { isCodeShow } from "./config";
-import { Radio, RadioButton } from "components/radio";
+import { isCodeShow } from './config';
+import { Radio, RadioButton } from 'components/radio';
+import ImageIcon from 'components/icon';
 
-<Meta title="公共组件|单选" component={Radio} />
+<Meta title="Radio 单选" component={Radio} />
 
-# Loading
+# Radio 单选
 
-加载动画
+在一组备选项中进行单选
 
-## Props
+### 基础用法
 
-<Props of={Radio} />
-
-## Stories
-
-默认
+默认单选样式
 
 <Preview withSource={isCodeShow}>
-  <Story name="默认">
-    <Radio.Group value="苹果">
-      <Radio label="苹果" />
-      <Radio label="香蕉" />
-      <Radio label="西瓜" />
+  <Story name="基础用法">
+    <Radio.Group value="七天">
+      <Radio label="三天" />
+      <Radio label="七天" />
+      <Radio label="三十天" />
     </Radio.Group>
   </Story>
 </Preview>
+
+### 按钮样式
+
+按钮样式的单选组合。
+
+<Preview withSource={isCodeShow}>
+  <Story name="按钮样式">
+    <RadioButton.Group value="图表">
+      <RadioButton label="图表">
+        <ImageIcon className="m-r-10" path="/assets/icon-chart.png" width="14" height="14" />
+        图表
+      </RadioButton>
+      <RadioButton label="列表">
+        <ImageIcon className="m-r-10" path="/assets/icon-list.png" width="14" height="14" />
+        列表
+      </RadioButton>
+    </RadioButton.Group>
+  </Story>
+</Preview>
+
+## Attributes
+
+<Props of={Radio} />

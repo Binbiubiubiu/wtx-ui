@@ -6,5 +6,6 @@ import 'echarts/lib/chart/radar';
 import 'echarts/lib/chart/gauge';
 import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
+
 export { ECharts, EChartOption } from 'echarts';
 export default echarts;

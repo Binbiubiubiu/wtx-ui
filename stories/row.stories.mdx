@@ -1,0 +1,66 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+
+import { isCodeShow } from './config';
+import Row from 'components/row';
+import "./style/block.scss";
+
+<Meta title="Row 行" component={Row} />
+
+# Row 行
+
+水平或垂直方向排列
+
+### 主轴排列
+
+<Preview withSource={isCodeShow}>
+  <Story name="主轴排列">
+    <div>
+     <Row justify="flex-start" style={{ width: 230,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">flex-start</div>
+        <div class="red"></div>
+      </Row>
+      <Row justify="center" style={{ width: 230,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">center</div>
+        <div class="red"></div>
+      </Row>
+      <Row justify="flex-end" style={{ width: 230,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">flex-end</div>
+        <div class="red"></div>
+      </Row>
+      <Row justify="space-between" style={{ width: 230,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">space-between</div>
+        <div class="red"></div>
+      </Row>
+      <Row justify="space-around" style={{ width: 230,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">space-around</div>
+        <div class="red"></div>
+      </Row>
+    </div>
+  </Story>
+</Preview>
+
+### 副轴排列
+
+<Preview withSource={isCodeShow}>
+  <Story name="副轴排列">
+    <div>
+     <Row align="top" style={{ height: 80,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">top</div>
+        <div class="red"></div>
+      </Row>
+      <Row align="middle" style={{ height: 80,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">middle</div>
+        <div class="red"></div>
+      </Row>
+      <Row align="bottom" style={{ height: 80,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
+        <div class="blue">bottom</div>
+        <div class="red"></div>
+      </Row>
+    </div>
+  </Story>
+</Preview>
+
+## Attributes
+
+<Props of={Row} />

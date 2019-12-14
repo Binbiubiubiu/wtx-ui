@@ -1,9 +1,11 @@
 module.exports = {
-  setupFiles: ['./tests/setup.ts'],
+  verbose: true,
+  setupFiles: ["./tests/setup.ts"],
   transform: {
-    '.(ts|tsx)': 'ts-jest',
+    ".(ts|tsx)": "ts-jest"
   },
-  testPathIgnorePatterns: ['/node_modules/', '/lib/'],
-  testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+  collectCoverageFrom: ["components/**/*.{ts,tsx}"],
+  testPathIgnorePatterns: ["/node_modules/", "/lib/"],
+  testRegex: "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+  moduleFileExtensions: ["ts", "tsx", "js", "json"]
 };

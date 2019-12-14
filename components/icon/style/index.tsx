@@ -1,3 +1,3 @@
-import "../../theme";
+import '../../theme';
 
-import "./image-icon.scss";
+import './image-icon.scss';

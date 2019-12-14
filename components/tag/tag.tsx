@@ -1,25 +1,16 @@
-import React, { FC, CSSProperties } from "react";
-import cls from "classnames";
+import React, { FC, CSSProperties } from 'react';
+import cls from 'classnames';
 
-import { prefixlib } from "../_util/constants";
+import { prefixlib } from '../_util/constants';
 
-type BadgeType =
-  | "default"
-  | "ok"
-  | "error"
-  | "danger"
-  | "warning"
-  | "disabled"
-  | "online"
-  | "outline";
+type TagType = 'ok' | 'error' | 'danger' | 'warning' | 'disabled' | 'online' | 'outline';
 
 const defaultProps = {
-  prefixCls: `${prefixlib}badge`,
-  type: "default" as BadgeType,
-  radius: false
+  prefixCls: `${prefixlib}tag`,
+  radius: false,
 };
 
-export type BadgeProps = {
+export type TagProps = {
   /**
    * 图标类型
    * (
@@ -34,7 +25,7 @@ export type BadgeProps = {
    *
    * @default default
    */
-  type?: BadgeType;
+  type?: TagType;
   /**
    * 是否圆角
    *
@@ -49,7 +40,7 @@ export type BadgeProps = {
   style?: CSSProperties;
 };
 
-export const Badge: FC<BadgeProps> = props => {
+export const Tag: FC<TagProps> = props => {
   const { prefixCls, type, radius, className, children } = props;
   return (
     <div
@@ -57,7 +48,7 @@ export const Badge: FC<BadgeProps> = props => {
         prefixCls,
         { [`${prefixCls}__radius`]: radius },
         type ? `${prefixCls}__${type}` : null,
-        className
+        className,
       )}
     >
       {children}
@@ -65,6 +56,6 @@ export const Badge: FC<BadgeProps> = props => {
   );
 };
 
-Badge.defaultProps = defaultProps;
+Tag.defaultProps = defaultProps;
 
-export default Badge;
+export default Tag;

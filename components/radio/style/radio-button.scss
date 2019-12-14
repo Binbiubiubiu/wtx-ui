@@ -4,34 +4,34 @@
 $prefixCls: '#{$prefixlib}radio-button';
 
 .#{$prefixCls} {
-  position: relative;
+  background-color: darken(#2480db, 44);
+  color: #fff;
+  cursor: pointer;
   display: inline-block;
-  min-width: 90px;
-  padding: 6px 20px;
 
   /* border-right  : solid 1px #2480db; */
 
   font-size: 14px;
   line-height: 1;
-  color: #fff;
+  min-width: 90px;
+  padding: 6px 20px;
+  position: relative;
   text-align: center;
-  cursor: pointer;
-  background-color: darken(#2480db, 44);
 
   &:first-child {
-    border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
   }
 
   &:last-child {
-    border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
   }
 
   .#{$prefixCls}__input {
+    opacity: 0;
     position: absolute;
     z-index: -1;
-    opacity: 0;
   }
 }
 

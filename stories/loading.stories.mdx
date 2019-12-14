@@ -1,22 +1,14 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { action } from "@storybook/addon-actions";
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
 
-import { isCodeShow } from "./config";
-import Loading from "components/loading";
+import { isCodeShow } from './config';
+import Loading from 'components/loading';
 
-<Meta title="公共组件|加载动画" component={Loading} />
+<Meta title="Loading 加载动画" component={Loading} />
 
-# Loading
+# Loading 加载动画
 
-加载动画
-
-## Props
-
-<Props of={Loading} />
-
-## Stories
-
-小球
+### 小球
 
 <Preview withSource={isCodeShow}>
   <Story name="小球">
@@ -24,7 +16,7 @@ import Loading from "components/loading";
   </Story>
 </Preview>
 
-柱子
+### 柱子
 
 <Preview withSource={isCodeShow}>
   <Story name="柱子">
@@ -32,7 +24,7 @@ import Loading from "components/loading";
   </Story>
 </Preview>
 
-泡泡
+### 泡泡
 
 <Preview withSource={isCodeShow}>
   <Story name="泡泡">
@@ -40,7 +32,7 @@ import Loading from "components/loading";
   </Story>
 </Preview>
 
-方块
+### 方块
 
 <Preview withSource={isCodeShow}>
   <Story name="方块">
@@ -48,7 +40,7 @@ import Loading from "components/loading";
   </Story>
 </Preview>
 
-左右弹跳
+### 左右弹跳
 
 <Preview withSource={isCodeShow}>
   <Story name="左右弹跳">
@@ -56,7 +48,7 @@ import Loading from "components/loading";
   </Story>
 </Preview>
 
-旋转
+### 旋转
 
 <Preview withSource={isCodeShow}>
   <Story name="旋转">
@@ -64,7 +56,7 @@ import Loading from "components/loading";
   </Story>
 </Preview>
 
-旋转泡泡
+### 旋转泡泡
 
 <Preview withSource={isCodeShow}>
   <Story name="旋转泡泡">
@@ -72,10 +64,14 @@ import Loading from "components/loading";
   </Story>
 </Preview>
 
-旋转方块
+### 旋转方块
 
 <Preview withSource={isCodeShow}>
   <Story name="旋转方块">
     <Loading icon="spokes" />
   </Story>
 </Preview>
+
+## Attributes
+
+<Props of={Loading} />

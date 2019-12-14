@@ -1,6 +1,6 @@
-import InfiniteTable, { InfiniteTableProps as IProps } from "./table";
+import InfiniteTable, { InfiniteTableProps as IProps } from './table';
 
-export { Column } from "react-virtualized";
+export { Column } from 'react-virtualized';
 
 export type InfiniteTableProps = IProps;
 

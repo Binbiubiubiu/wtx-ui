@@ -1,1 +1,1 @@
-import "./dialog.scss";
+import './dialog.scss';

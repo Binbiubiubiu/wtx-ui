@@ -28,6 +28,26 @@ module.exports = async ({ config }) => {
   });
 
   config.module.rules.push({
+    test: /\.stories\.[jt]sx?$/,
+    loaders: [
+      {
+        loader: require.resolve('@storybook/source-loader'),
+        options: {
+          // parser: 'typescript',
+          // prettierConfig: {
+          //   printWidth: 100,
+          //   tabWidth: 2,
+          //   bracketSpacing: true,
+          //   trailingComma: 'es5',
+          //   singleQuote: true,
+          // },
+        },
+      },
+    ],
+    enforce: 'pre',
+  });
+
+  config.module.rules.push({
     test: /\.scss$/,
     use: ['style-loader', 'css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../'),

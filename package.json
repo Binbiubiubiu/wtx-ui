@@ -13,11 +13,12 @@
     "build:umd": "webpack --config scripts/webpack.config.js",
     "build:css": "cd scripts && gulp",
     "clean": "rimraf dist lib es",
-    "lint:script": "eslint . --ext '.js,.jsx,.ts,.tsx --fix'",
+    "babel:es": "cross-env babel components --out-dir es --extensions '.ts,.tsx' --ignore '**/__tests__'",
+    "babel:cjs": "cross-env OUTPUT_MOUDLES=cjs babel components --out-dir lib --extensions '.ts,.tsx' --ignore '**/__tests__'",
+    "lint:script": "eslint . --ext .ts,.tsx --fix",
     "lint:style": "stylelint 'components/**/*.scss' --syntax scss --fix",
-    "lint:fmt": "prettier --write \"components/**/*.{scss,js,jsx,ts,tsx}\" \"stories/*.mdx\"",
+    "lint:fmt": "prettier --write 'components/**/*.{scss,ts,tsx}'",
     "lint": "npm run lint:script && npm run lint:style && npm run lint:fmt ",
-    "pretty-quick": "pretty-quick",
     "test": "jest --config jest.config.js",
     "test:coverage": "npm run test -- --coverage",
     "storybook": "start-storybook -p 6006 -s dist",
@@ -25,12 +26,25 @@
     "deploy-storybook": "storybook-to-ghpages",
     "copy-assets-to-lib": "cpx \"./components/**/*.{scss,png,jpg}\" ./lib",
     "copy-assets-to-es": "cpx \"./components/**/*.{scss,png,jpg}\" ./es",
-    "upgrade": "yarn upgrade"
+    "upgrade": "yarn upgrade",
+    "cm": "git-cz"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "**/*.{ts?(x)}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "components/**/*.scss": [
+      "stylelint --syntax scss --fix",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -79,24 +93,32 @@
     "video.js": "^7.6.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
-    "@storybook/addon-a11y": "^5.2.6",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-backgrounds": "^5.2.6",
-    "@storybook/addon-docs": "^5.2.8",
-    "@storybook/addon-events": "^5.2.6",
-    "@storybook/addon-knobs": "^5.2.6",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addon-options": "^5.2.6",
-    "@storybook/addon-viewport": "^5.2.6",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@storybook/addon-a11y": "^5.3.0-beta.22",
+    "@storybook/addon-actions": "^5.3.0-beta.22",
+    "@storybook/addon-backgrounds": "^5.3.0-beta.22",
+    "@storybook/addon-docs": "^5.3.0-beta.22",
+    "@storybook/addon-events": "^5.3.0-beta.22",
+    "@storybook/addon-knobs": "^5.3.0-beta.22",
+    "@storybook/addon-links": "^5.3.0-beta.22",
+    "@storybook/addon-options": "^5.3.0-beta.22",
+    "@storybook/addon-viewport": "^5.3.0-beta.22",
+    "@storybook/addons": "^5.3.0-beta.22",
+    "@storybook/react": "^5.3.0-beta.22",
     "@storybook/storybook-deployer": "^2.8.1",
     "@types/classnames": "^2.2.9",
     "@types/echarts": "^4.4.1",
     "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.23",
+    "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "@types/react-virtualized": "^9.21.6",
     "@types/video.js": "^7.3.3",
@@ -104,8 +126,11 @@
     "@typescript-eslint/parser": "^2.11.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "commitizen": "^4.0.3",
     "cpx": "^1.5.0",
+    "cross-env": "^6.0.3",
     "css-loader": "^3.2.1",
+    "cz-conventional-changelog": "3.0.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
@@ -131,6 +156,7 @@
     "gulp-typescript": "^6.0.0-alpha.1",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lint-staged": ">=8",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -144,8 +170,11 @@
     "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
     "stylelint": "^12.0.0",
-    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-standard": "^19.0.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-scss": "^3.13.0",
     "terser-webpack-plugin": "^2.2.2",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.3",
@@ -164,5 +193,10 @@
     "Firefox ESR",
     "> 1%",
     "ie >= 9"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

@@ -1,6 +1,5 @@
 import React, { FC, ReactNode, MouseEventHandler, CSSProperties } from 'react';
 import cls from 'classnames';
-import './style/dialog.scss';
 import ImageIcon from '../icon';
 
 import { prefixlib } from '../_util/constants';
@@ -62,20 +61,10 @@ export const Dialog: FC<DialogProps> = ({
         <span className={`${prefixCls}__title`}>{title}</span>
         <div className={`${prefixCls}__expand`}>{headerExpandRender && headerExpandRender()}</div>
         {onClose && (
-          <ImageIcon
-            path="/assets/dialog/close-icon.png"
-            width="18"
-            height="18"
-            onClick={onClose}
-          />
+          <ImageIcon path="/assets/close-icon.png" width="18" height="18" onClick={onClose} />
         )}
         {onMinimize && (
-          <ImageIcon
-            path="/assets/dialog/minimize-icon.png"
-            width="18"
-            height="18"
-            onClick={onMinimize}
-          />
+          <ImageIcon path="/assets/minimize-icon.png" width="18" height="18" onClick={onMinimize} />
         )}
       </div>
       <div className={`${prefixCls}__content`}>{children}</div>

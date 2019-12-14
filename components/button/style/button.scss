@@ -4,15 +4,15 @@
 $prefixCls: '#{$prefixlib}button';
 
 .#{$prefixCls} {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: $--button-text-size;
-  line-height: 1;
-  color: $--button-text-color;
-  white-space: nowrap;
-  cursor: pointer;
   background-color: $--button-primary-bg;
   border-radius: 24px;
+  color: $--button-text-color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $--button-text-size;
+  line-height: 1;
+  padding: 4px 12px;
+  white-space: nowrap;
 
   &:active {
     background-color: darken($--button-primary-bg, 10);
@@ -27,23 +27,23 @@ $prefixCls: '#{$prefixlib}button';
   }
 
   &:disabled {
-    cursor: not-allowed;
     background: $--button-disabled-bg;
+    cursor: not-allowed;
   }
 
   &__up {
-    padding-left: 24px;
     background-image: url('../assets/up_arrow.png');
-    background-repeat: no-repeat;
     background-position: left 8px center;
+    background-repeat: no-repeat;
     background-size: 8px 14px;
+    padding-left: 24px;
   }
 
   &__down {
-    padding-right: 24px;
     background-image: url('../assets/down_arrow.png');
-    background-repeat: no-repeat;
     background-position: right 8px center;
+    background-repeat: no-repeat;
     background-size: 8px 14px;
+    padding-right: 24px;
   }
 }

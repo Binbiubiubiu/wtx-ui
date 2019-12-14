@@ -1,1 +1,1 @@
-export const prefixlib = "wtx-";
+export const prefixlib = 'wtx-';

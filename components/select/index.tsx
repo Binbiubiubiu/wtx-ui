@@ -1,5 +1,5 @@
-import Select from "./select";
+import Select from './select';
 
-export { Option, OptGroup } from "rc-select";
+export { Option, OptGroup } from 'rc-select';
 
 export default Select;

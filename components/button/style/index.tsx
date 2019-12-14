@@ -1,2 +1,2 @@
-import "../../theme";
-import "./button.scss";
+import '../../theme';
+import './button.scss';

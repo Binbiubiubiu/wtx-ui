@@ -1,43 +1,43 @@
-import { configure, addParameters, addDecorator } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-import { DocsPage, DocsContainer } from "@storybook/addon-docs/blocks";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { themes } from "@storybook/theming";
+import { configure, addParameters, addDecorator } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { themes } from '@storybook/theming';
 
 const newViewports = {
   case1: {
-    name: "1920*1080",
+    name: '1920*1080',
     styles: {
-      width: "1920px",
-      height: "1080px"
-    }
+      width: '1920px',
+      height: '1080px',
+    },
   },
   case2: {
-    name: "1366*768",
+    name: '1366*768',
     styles: {
-      width: "1366px",
-      height: "768px"
-    }
-  }
+      width: '1366px',
+      height: '768px',
+    },
+  },
 };
 
 addDecorator(withA11y);
 
 addParameters({
   docs: {
-    withSource: "open",
+    withSource: 'open',
     container: DocsContainer,
-    page: DocsPage
+    page: DocsPage,
   },
   options: {
     isFullscreen: false,
     showAddonsPanel: true,
     showSearchBox: true,
-    panelPosition: "bottom",
+    panelPosition: 'bottom',
     hierarchySeparator: /\./,
     // hierarchyRootSeparator: /\|/,
     enableShortcuts: true,
-    theme: themes.dark
+    theme: themes.dark,
     // theme: create({
     //   base: 'light',
     //   brandTitle: 'CRA Kitchen Sink',
@@ -48,21 +48,18 @@ addParameters({
     //   a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, { numeric: true }),
   },
   backgrounds: [
-    { name: "dark", value: "#242424", default: true },
-    { name: "normal", value: "#ffffff" },
-    { name: "twitter", value: "#00aced" },
-    { name: "facebook", value: "#3b5998" }
+    { name: 'dark', value: '#242424', default: true },
+    { name: 'normal', value: '#ffffff' },
+    { name: 'twitter', value: '#00aced' },
+    { name: 'facebook', value: '#3b5998' },
   ],
   viewport: {
     viewports: {
       // ...INITIAL_VIEWPORTS,
-      ...newViewports
-    }
-  }
+      ...newViewports,
+    },
+  },
 });
 
 // automatically import all files ending in *.stories.js
-configure(
-  require.context("../stories", true, /\.stories?\.(tsx|mdx)$/),
-  module
-);
+configure(require.context('../stories', true, /\.stories?\.([jt]sx?|mdx)$/), module);

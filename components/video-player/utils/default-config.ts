@@ -1,13 +1,13 @@
 export default {
-  preload: "none",
+  preload: 'none',
   muted: true,
   autoplay: true,
   controls: true,
   loop: true,
-  language: "zh-CN",
+  language: 'zh-CN',
   errorDisplay: false,
   //   duration: 30000,
   html5: {
-    nativeTextTracks: false
-  }
+    nativeTextTracks: false,
+  },
 };

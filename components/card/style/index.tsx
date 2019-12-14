@@ -1,4 +1,4 @@
-import "../../theme";
+import '../../theme';
 
-import "./card.scss";
-import "./inline-card.scss";
+import './card.scss';
+import './inline-card.scss';

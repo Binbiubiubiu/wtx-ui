@@ -1,138 +1,108 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { action } from "@storybook/addon-actions";
-import { isCodeShow } from "./config";
-import { px2rem } from "components/_util/viewports";
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import { isCodeShow } from './config';
 
-import { PieChart, LineChart, RadarChart } from "components/chart";
+import { PieChart, LineChart, RadarChart } from 'components/chart';
 
-<Meta title="公共组件|图表" />
+<Meta title="Chart 图表" />
 
-# PieChart
+# Chart 图表
 
-饼图表
+基于 echarts 做的二次封装的业务组件
 
-## Props
-
-<Props of={PieChart} />
-
-## Stories
-
-饼图
+### PieChart 饼图
 
 <Preview withSource={isCodeShow}>
   <Story name="饼图">
     <PieChart
       data={[
-        {
-          name: "可视化烟感",
-          count: 234
-        },
-        {
-          name: "type2",
-          count: 134
-        },
-        {
-          name: "type3",
-          count: 204
-        },
-        {
-          name: "type4",
-          count: 134
-        }
+        { name: '可视化烟感', count: 234 },
+        { name: 'type2', count: 134 },
+        { name: 'type3', count: 204 },
+        { name: 'type4', count: 134 },
       ]}
-      style={{
-        width: 400,
-        height: 240
-      }}
+      style={{ width: 400, height: 240 }}
     />
   </Story>
 </Preview>
 
-# LineChart
+## Attributes
 
-折线图
+<Props of={PieChart} />
 
-## Props
-
-<Props of={LineChart} />
-
-## Stories
-
-折线图
+### LineChart 折线图
 
 <Preview withSource={isCodeShow}>
   <Story name="折线图">
     <LineChart
-      xaxis={["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7"]}
+      xaxis={['11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7']}
       yaxis={[[200, 189, 120, 165, 145, 209, 192]]}
       style={{
         width: 400,
-        height: 190
+        height: 190,
       }}
     />
   </Story>
 </Preview>
 
-双线折线图
+-
 
 <Preview withSource={isCodeShow}>
   <Story name="双线折线图">
     <LineChart
-      xaxis={["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7"]}
+      xaxis={['11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7']}
       yaxis={[
         [200, 189, 120, 165, 145, 209, 192],
-        [191, 289, 320, 165, 245, 109, 92]
+        [191, 289, 320, 165, 245, 109, 92],
       ]}
-      tags={["第一类型", "第二类型"]}
+      tags={['第一类型', '第二类型']}
       style={{
         width: 400,
-        height: 190
+        height: 190,
       }}
     />
   </Story>
 </Preview>
 
-# RadarChart
+## Attributes
 
-雷达图
+<Props of={LineChart} />
 
-## Props
-
-<Props of={RadarChart} />
-
-## Stories
-
-雷达图
+### RadarChart 雷达图
 
 <Preview withSource={isCodeShow}>
   <Story name="雷达图">
     <RadarChart
       data={[
         {
-          name: "智能气感(53)",
-          value: 20
+          name: '智能气感(53)',
+          value: 20,
         },
         {
-          name: "水压液位监测(30)",
-          value: 30
+          name: '水压液位监测(30)',
+          value: 30,
         },
         {
-          name: "智能消火栓(15)",
-          value: 22
+          name: '智能消火栓(15)',
+          value: 22,
         },
         {
-          name: "智慧用电(42)",
-          value: 50
+          name: '智慧用电(42)',
+          value: 50,
         },
         {
-          name: "智能烟感(142)",
-          value: 12
-        }
+          name: '智能烟感(142)',
+          value: 12,
+        },
       ]}
       style={{
         width: 400,
-        height: 160
+        height: 160,
       }}
     />
   </Story>
 </Preview>
+
+## Attributes
+
+<Props of={RadarChart} />
