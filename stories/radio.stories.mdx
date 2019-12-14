@@ -3,6 +3,8 @@ import { action } from '@storybook/addon-actions';
 
 import { Radio, RadioButton } from 'components/radio';
 import ImageIcon from 'components/icon';
+import IconChart from '../dist/assets/icon-chart.png';
+import IconList from '../dist/assets/icon-list.png';
 
 <Meta title="Radio 单选" component={Radio} />
 
@@ -32,11 +34,11 @@ import ImageIcon from 'components/icon';
   <Story name="按钮样式">
     <RadioButton.Group value="图表">
       <RadioButton label="图表">
-        <ImageIcon className="m-r-10" path="/assets/icon-chart.png" width={14} height={14} />
+        <ImageIcon className="m-r-10" path={IconChart} width={14} height={14} />
         图表
       </RadioButton>
       <RadioButton label="列表">
-        <ImageIcon className="m-r-10" path="/assets/icon-list.png" width={14} height={14} />
+        <ImageIcon className="m-r-10" path={IconList} width={14} height={14} />
         列表
       </RadioButton>
     </RadioButton.Group>
