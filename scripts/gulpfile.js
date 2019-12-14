@@ -18,7 +18,7 @@ const rename = require('gulp-rename');
 const flatten = require('gulp-flatten');
 const { name } = require('../package.json');
 
-const r = (p) => path.resolve(__dirname, '..', p);
+const r = p => path.resolve(__dirname, '..', p);
 
 const DIR = {
   assets: r('components/**/*.{scss,png}'),
@@ -43,9 +43,9 @@ function copyAssetsToDist() {
 }
 
 function copyFonts() {
-  return src(
-    r('components/theme/fonts/**/*.{eot,otf,svg,ttf,woff,woff2}'),
-  ).pipe(dest(`${DIR.dist}/fonts`));
+  return src(r('components/theme/fonts/**/*.{eot,otf,svg,ttf,woff,woff2}')).pipe(
+    dest(`${DIR.dist}/fonts`),
+  );
 }
 
 function createCss() {

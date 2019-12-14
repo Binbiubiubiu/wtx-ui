@@ -63,15 +63,15 @@ module.exports = {
         exclude: /node_modules/,
         include: [r('components'), r('src')],
       },
-      // {
-      //   test: /\.(sa|sc|c)ss$/,
-      //   use: [
-      //     MiniCssExtractPlugin.loader,
-      //     { loader: "css-loader", options: { importLoaders: 2 } },
-      //     "postcss-loader",
-      //     "sass-loader"
-      //   ]
-      // },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader", options: { importLoaders: 2 } },
+          "postcss-loader",
+          "sass-loader"
+        ]
+      },
       {
         test: /\.(png|jpe?g|gif|woff|eot|ttf|svg)$/,
         use: [
@@ -105,23 +105,23 @@ module.exports = {
           },
         },
       }),
-      // new OptimizeCSSAssetsPlugin({
-      //   // 压缩css  与 ExtractTextPlugin 配合使用
-      //   cssProcessor: require("cssnano"),
-      //   cssProcessorOptions: { discardComments: { removeAll: true } }, // 移除所有注释
-      //   canPrint: true // 是否向控制台打印消息
-      // })
+      new OptimizeCSSAssetsPlugin({
+        // 压缩css  与 ExtractTextPlugin 配合使用
+        cssProcessor: require("cssnano"),
+        cssProcessorOptions: { discardComments: { removeAll: true } }, // 移除所有注释
+        canPrint: true // 是否向控制台打印消息
+      })
     ],
-    // splitChunks: {
-    //   cacheGroups: {
-    //     styles: {
-    //       name: "styles",
-    //       test: /\.(sa|sc|c)ss$/,
-    //       chunks: "all",
-    //       enforce: true
-    //     }
-    //   }
-    // }
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          test: /\.(sa|sc|c)ss$/,
+          chunks: "all",
+          enforce: true
+        }
+      }
+    }
   },
   plugins: [
     new ProgressBarPlugin({
@@ -129,12 +129,12 @@ module.exports = {
     }),
     new webpack.BannerPlugin(`${LOGO}\n${version}\n${description}
       \n${fs.readFileSync(r('LICENSE'))}`),
-    // new MiniCssExtractPlugin({
-    //   // Options similar to the same options in webpackOptions.output
-    //   // all options are optional
-    //   filename: "[name].min.css"
-    //   // chunkFilename: "[id].css"
-    //   // ignoreOrder: false // Enable to remove warnings about conflicting order
-    // })
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // all options are optional
+      filename: "[name].min.css"
+      // chunkFilename: "[id].css"
+      // ignoreOrder: false // Enable to remove warnings about conflicting order
+    })
   ],
 };

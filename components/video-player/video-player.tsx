@@ -1,7 +1,7 @@
 import React, { Component, CSSProperties } from 'react';
 import cls from 'classnames';
 import videojs from 'video.js';
-// import 'video.js/dist/video-js.css';
+import 'video.js/dist/video-js.css';
 import { shallowMerge } from '../_util';
 import defaultVideoPlayerConfig from './utils/default-config';
 import { analyzeTypeOfVideo, isVaildURL } from './utils';

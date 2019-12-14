@@ -1,7 +1,7 @@
 @import '../../theme/var/index.scss';
 @import '../../theme/mixin.scss';
 
-$prefixCls: '#{$prefixlib}badge';
+$prefixCls: '#{$prefixlib}tag';
 
 .#{$prefixCls} {
   background-color: $--badge-primary-bg;

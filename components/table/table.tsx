@@ -1,5 +1,5 @@
 import React, { Component, MouseEvent, CSSProperties } from 'react';
-// import 'react-virtualized/styles.css';
+import 'react-virtualized/styles.css';
 import cls from 'classnames';
 import { Table, AutoSizer, InfiniteLoader, TableRowRenderer } from 'react-virtualized';
 import Loading from '../loading';
