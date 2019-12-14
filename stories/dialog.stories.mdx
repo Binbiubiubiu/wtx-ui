@@ -1,7 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 
-import { isCodeShow } from './config';
 import Dialog from 'components/dialog';
 import Button from 'components/button';
 
@@ -15,7 +14,7 @@ import Button from 'components/button';
 
 弹出弹窗
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="基础用法">
     <Dialog
       titleIcon={<Icon
@@ -37,7 +36,7 @@ import Button from 'components/button';
 
 明亮主题风格弹窗
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="明亮主题">
     <Dialog
       titleIcon={<Icon

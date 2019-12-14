@@ -1,7 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 
-import { isCodeShow } from './config';
 import { Radio, RadioButton } from 'components/radio';
 import ImageIcon from 'components/icon';
 
@@ -15,7 +14,7 @@ import ImageIcon from 'components/icon';
 
 默认单选样式
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="基础用法">
     <Radio.Group value="七天">
       <Radio label="三天" />
@@ -29,7 +28,7 @@ import ImageIcon from 'components/icon';
 
 按钮样式的单选组合。
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="按钮样式">
     <RadioButton.Group value="图表">
       <RadioButton label="图表">

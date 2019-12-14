@@ -1,7 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 
-import { isCodeShow } from './config';
 import VideoPlayer from 'components/video-player';
 import 'components/video-player/style';
 
@@ -15,7 +14,7 @@ import 'components/video-player/style';
 
 正常播放状态
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="基础用法">
     <VideoPlayer src="http://meigui.qqqq-kuyun.com/20190406/976_420fc19b/index.m3u8" />
   </Story>
@@ -25,7 +24,7 @@ import 'components/video-player/style';
 
 视频类型不正确、视频格式不正确 都认为未安装情况
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="未安装">
     <VideoPlayer src="http://meigui.qqqq-kuyun.com/20190406/976_420fc19b/index..错误类型" />
   </Story>
@@ -35,7 +34,7 @@ import 'components/video-player/style';
 
 视频地址没问题， 但是视频流获取不到播放不了
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="播放失败">
     <VideoPlayer src="http://错误地址.m3u8" />
   </Story>

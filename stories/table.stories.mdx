@@ -1,7 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 
-import { isCodeShow } from './config';
 import Table, { Column } from 'components/table';
 import 'components/table/style';
 
@@ -15,7 +14,7 @@ import 'components/table/style';
 
 正常播放状态
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="基础用法">
      <div style={{ width: 400, height: 276 }}>
       <Table height={300} headerHeight={20} rowHeight={40}>

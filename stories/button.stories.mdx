@@ -1,7 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 import Button from '../components/button';
-import { isCodeShow } from './config';
 
 <Meta title="Button 按钮" component={Button} />
 
@@ -13,7 +12,7 @@ import { isCodeShow } from './config';
 
 基础的按钮用法。
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="默认按钮">
     <Button>默认按钮</Button>
   </Story>
@@ -23,7 +22,7 @@ import { isCodeShow } from './config';
 
 主要用于分页或点击打开小弹窗。
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="带箭头">
     <div>
       <Button up>上一页</Button>
@@ -36,7 +35,7 @@ import { isCodeShow } from './config';
 
 按钮不可用状态。
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="禁用">
     <Button disabled>禁用状态</Button>
   </Story>
@@ -46,7 +45,7 @@ import { isCodeShow } from './config';
 
 按钮激活状态。
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="激活状态">
     <Button actived>激活状态</Button>
   </Story>
@@ -54,4 +53,4 @@ import { isCodeShow } from './config';
 
 ## Attributes
 
-<Props of={Button} exclude={['prefixCls']} />
+<Props of={Button} />

@@ -1,7 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
 
-import { isCodeShow } from './config';
 import Row from 'components/row';
 import "./style/block.scss";
 
@@ -13,7 +12,7 @@ import "./style/block.scss";
 
 ### 主轴排列
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="主轴排列">
     <div>
      <Row justify="flex-start" style={{ width: 230,background:'rgba(255,255,255,.2)',marginBottom:20 }}>
@@ -42,7 +41,7 @@ import "./style/block.scss";
 
 ### 副轴排列
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="副轴排列">
     <div>
      <Row align="top" style={{ height: 80,background:'rgba(255,255,255,.2)',marginBottom:20 }}>

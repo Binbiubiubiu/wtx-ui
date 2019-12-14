@@ -1,6 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
-import { isCodeShow } from './config';
 
 import Card, { InlineCard } from '../components/card';
 
@@ -14,7 +13,7 @@ import Card, { InlineCard } from '../components/card';
 
 展示页面统计信息。
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="基础用法">
     <Card
       icon={<Icon path="assets/number-bar-icons/11.png" width="40" height="46" />}
@@ -28,7 +27,7 @@ import Card, { InlineCard } from '../components/card';
 
 展示弹窗内统计信息。
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="内联样式">
     <InlineCard title="消防联网设备总数(个)" content="300" />
   </Story>

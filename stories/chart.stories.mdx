@@ -1,6 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { action } from '@storybook/addon-actions';
-import { isCodeShow } from './config';
 
 import { PieChart, LineChart, RadarChart } from 'components/chart';
 
@@ -12,7 +11,7 @@ import { PieChart, LineChart, RadarChart } from 'components/chart';
 
 ### PieChart 饼图
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="饼图">
     <PieChart
       data={[
@@ -32,7 +31,7 @@ import { PieChart, LineChart, RadarChart } from 'components/chart';
 
 ### LineChart 折线图
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="折线图">
     <LineChart
       xaxis={['11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7']}
@@ -47,7 +46,7 @@ import { PieChart, LineChart, RadarChart } from 'components/chart';
 
 -
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="双线折线图">
     <LineChart
       xaxis={['11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7']}
@@ -70,7 +69,7 @@ import { PieChart, LineChart, RadarChart } from 'components/chart';
 
 ### RadarChart 雷达图
 
-<Preview withSource={isCodeShow}>
+<Preview>
   <Story name="雷达图">
     <RadarChart
       data={[
