@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card> should render <Card/> components 1`] = `
+Array [
+  <div
+    class="wtx-card"
+    style="margin-bottom:20px"
+  >
+    12
+    <dl
+      class="wtx-card__body"
+    >
+      <dt
+        class="wtx-card__title"
+      >
+        摄像头类型(种)
+      </dt>
+      <dd
+        class="wtx-card__content"
+      >
+        <span
+          class="led-num"
+        >
+          6
+        </span>
+      </dd>
+    </dl>
+  </div>,
+  <dl
+    class="wtx-inline-card"
+  >
+    <dt
+      class="wtx-inline-card__title"
+    >
+      消防联网设备总数(个)
+    </dt>
+    <dd
+      class="wtx-inline-card__content led-num"
+    >
+      300
+    </dd>
+  </dl>,
+]
+`;

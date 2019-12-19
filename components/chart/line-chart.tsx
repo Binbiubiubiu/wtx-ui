@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { Component, CSSProperties } from 'react';
 import echarts, { ECharts, EChartOption } from '../_lib/echarts';
 
 export interface LineChartProps {
@@ -14,7 +14,10 @@ export interface LineChartProps {
    *  图表的标签
    */
   tags?: string[];
-  [props: string]: any;
+  /** 自定义class */
+  className?: string;
+  /** 自定义style */
+  style?: CSSProperties;
 }
 
 export class LineChart extends Component<LineChartProps> {
@@ -25,13 +28,13 @@ export class LineChart extends Component<LineChartProps> {
   constructor(props: LineChartProps) {
     super(props);
 
-    this.chartRef = createRef();
+    this.chartRef = React.createRef();
   }
 
   componentDidMount() {
     const { xaxis, yaxis, tags } = this.props;
 
-    this.chart = echarts.init(this.chartRef.current!);
+    this.chart = echarts.init(this.chartRef.current as HTMLDivElement);
     const options = getOptions(xaxis, yaxis, tags);
     this.chart.setOption(options);
   }

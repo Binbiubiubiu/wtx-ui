@@ -5,11 +5,9 @@ export interface PieChartProps {
   /**
    * 数据
    */
-  data: any[];
+  data: Array<{ name: string; value: number }>;
   /** 自定义class */
   className?: string;
-  /** 样式前缀 */
-  prefixCls?: string;
   /** 自定义style */
   style?: CSSProperties;
 }
@@ -28,21 +26,21 @@ export class PieChart extends Component<PieChartProps> {
   componentDidMount() {
     const { data } = this.props;
 
-    this.chart = echarts.init(this.chartRef.current!);
+    this.chart = echarts.init(this.chartRef.current as HTMLDivElement);
     const options = getOptions(data);
     this.chart.setOption(options);
   }
 
   render() {
-    const { style } = this.props;
+    const { data, ...rest } = this.props;
 
-    return <div ref={this.chartRef} style={style} />;
+    return <div ref={this.chartRef} {...rest} />;
   }
 }
 
 export default PieChart;
 
-const getOptions: (data: any) => EChartOption = dataList => ({
+const getOptions: (data: Array<{ name: string; value: number }>) => EChartOption = dataList => ({
   color: ['#01933F', '#B74D8F', '#E2556A', '#B76767', '#F7C500', '#FFFC9C', '#957F66', '#0F91DD'],
   series: [
     {
@@ -62,10 +60,7 @@ const getOptions: (data: any) => EChartOption = dataList => ({
           },
         },
       },
-      data: dataList.map((item: any) => ({
-        value: item.count,
-        name: item.name,
-      })),
+      data: dataList,
     },
   ],
 });

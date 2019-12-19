@@ -24,7 +24,7 @@ export interface CardProps {
 
 export const Card: FC<CardProps> = ({ prefixCls, icon, title, content, className, ...rest }) => {
   const contentCls = cls({
-    'led-num': !Number.isNaN(+content!),
+    'led-num': typeof Number(content) === 'number',
   });
 
   return (

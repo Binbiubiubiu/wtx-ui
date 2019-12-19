@@ -42,7 +42,7 @@ export interface VideoPlayerProps {
 }
 
 type VideoPlayerState = {
-  isVaildURL: boolean;
+  isURLVailded: boolean;
   error: boolean;
 };
 
@@ -57,7 +57,7 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
     super(props);
     this.videoNode = React.createRef();
     this.state = {
-      isVaildURL: true,
+      isURLVailded: true,
       error: false,
     };
   }
@@ -69,7 +69,7 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
     if (!isVaildURL(src)) {
       this.setState({
         error: true,
-        isVaildURL: false,
+        isURLVailded: false,
       });
       return;
     }
@@ -88,12 +88,7 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
     this.player.on('error', this.addVideoPlayerErrorListener);
   }
 
-  /** videojs  视频流获取失败 错误处理 */
-  addVideoPlayerErrorListener = () => {
-    this.setState(() => ({ error: true }));
-  };
-
-  UNSAFE_componentWillMount() {
+  componentWillUnmount() {
     if (this.player) {
       this.player.off('error', this.addVideoPlayerErrorListener);
       this.player.dispose();
@@ -101,11 +96,16 @@ class VideoPlayer extends Component<VideoPlayerProps, VideoPlayerState> {
     }
   }
 
+  /** videojs  视频流获取失败 错误处理 */
+  addVideoPlayerErrorListener = () => {
+    this.setState(() => ({ error: true }));
+  };
+
   renderError() {
-    const { isVaildURL } = this.state;
+    const { isURLVailded } = this.state;
     const { prefixCls } = this.props;
 
-    return <div className={`${prefixCls}__error`}>{isVaildURL ? '视频播放异常' : '未安装'}</div>;
+    return <div className={`${prefixCls}__error`}>{isURLVailded ? '视频播放异常' : '未安装'}</div>;
   }
 
   render() {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Tag /> should render a <Tag/> components 1`] = `
+exports[`<Tag /> should render <Tag/> components 1`] = `
 <div>
   <div
     class="wtx-tag"
@@ -10,7 +10,37 @@ exports[`<Tag /> should render a <Tag/> components 1`] = `
   <div
     class="wtx-tag wtx-tag__radius"
   >
-    默认
+    圆角标签
+  </div>
+  <div
+    class="wtx-tag wtx-tag__ok"
+  >
+    正常状态
+  </div>
+  <div
+    class="wtx-tag wtx-tag__danger"
+  >
+    异常状态
+  </div>
+  <div
+    class="wtx-tag wtx-tag__warning"
+  >
+    警告状态
+  </div>
+  <div
+    class="wtx-tag wtx-tag__disabled"
+  >
+    禁用状态
+  </div>
+  <div
+    class="wtx-tag wtx-tag__online"
+  >
+    在线状态
+  </div>
+  <div
+    class="wtx-tag wtx-tag__outline"
+  >
+    离线状态
   </div>
 </div>
 `;

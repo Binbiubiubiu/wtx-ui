@@ -45,8 +45,8 @@ export const ImageIcon: FC<ImageIconProps> = props => {
       style={{ ...style, width, height }}
       className={IconCls}
       onClick={onClick}
-      {...rest}
       alt=""
+      {...rest}
     />
   );
 };

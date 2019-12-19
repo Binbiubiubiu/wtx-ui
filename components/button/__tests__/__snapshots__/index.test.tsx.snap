@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> should render <Button> components 1`] = `
+<div>
+  <button
+    class="wtx-button"
+    type="button"
+  >
+    默认视频
+  </button>
+  <button
+    class="wtx-button wtx-button__up"
+    type="button"
+  >
+    上一页
+  </button>
+  <button
+    class="wtx-button wtx-button__down"
+    type="button"
+  >
+    下一页
+  </button>
+  <button
+    class="wtx-button"
+    disabled=""
+    type="button"
+  >
+    禁用状态
+  </button>
+  <button
+    class="wtx-button wtx-button__actived"
+    type="button"
+  >
+    激活状态
+  </button>
+</div>
+`;

@@ -46,16 +46,14 @@ $prefixCls: '#{$prefixlib}tag';
 
   // 在线
   &__online {
-    background:
-      $--badge-success-bg url('../assets/wifi_online.jpg') no-repeat left 8px center /
+    background: $--badge-success-bg url('../assets/wifi_online.jpg') no-repeat left 8px center /
       20px 14px;
     padding-left: 36px;
   }
 
   // 离线
-  &__online {
-    background:
-      $--badge-success-bg url('../assets/wifi_online.jpg') no-repeat left 8px center /
+  &__outline {
+    background: $--badge-disabled-bg url('../assets/wifi_outline.jpg') no-repeat left 8px center /
       20px 14px;
     padding-left: 36px;
   }

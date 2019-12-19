@@ -23,7 +23,7 @@ export class RadarChart extends Component<RadarChartProps> {
   componentDidMount() {
     const { data } = this.props;
 
-    this.chart = echarts.init(this.chartRef.current!);
+    this.chart = echarts.init(this.chartRef.current as HTMLDivElement);
     const options = getOptions(data);
     this.chart.setOption(options);
   }

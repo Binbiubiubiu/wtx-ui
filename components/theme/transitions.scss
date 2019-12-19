@@ -8,17 +8,11 @@ $fade-timing: 0.46s;
 
     @if $c == left {
       transform: translate3d(-$fade-distance, 0, 0);
-    }
-
-    @else if $c == right {
+    } @else if $c == right {
       transform: translate3d($fade-distance, 0, 0);
-    }
-
-    @else if $c == top {
+    } @else if $c == top {
       transform: translate3d(0, -$fade-distance, 0);
-    }
-
-    @else if $c == bottom {
+    } @else if $c == bottom {
       transform: translate3d(0, $fade-distance, 0);
     }
   }
@@ -40,17 +34,11 @@ $fade-timing: 0.46s;
 
     @if $c == left {
       transform: translate3d(-$fade-distance, 0, 0);
-    }
-
-    @else if $c == right {
+    } @else if $c == right {
       transform: translate3d($fade-distance, 0, 0);
-    }
-
-    @else if $c == top {
+    } @else if $c == top {
       transform: translate3d(0, -$fade-distance, 0);
-    }
-
-    @else if $c == bottom {
+    } @else if $c == bottom {
       transform: translate3d(0, $fade-distance, 0);
     }
   }

@@ -4,7 +4,6 @@ export { default as Card } from './card';
 export { default as Row } from './row';
 export { LineChart, PieChart, RadarChart } from './chart';
 export { Radio, RadioButton, RadioGroup } from './radio';
-export { default as Table } from './table';
 export { default as Select } from './select';
 export { default as Icon } from './icon';
 export { default as Version } from './version';

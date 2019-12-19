@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect, CSSProperties } from 'react';
 import cls from 'classnames';
-import { randomString } from '../_util/viewports';
+import { randomString } from '../_util';
 
 import { prefixlib } from '../_util/constants';
 

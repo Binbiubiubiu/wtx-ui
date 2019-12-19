@@ -54,6 +54,7 @@ export const Button: FC<ButtonProps> = ({
   ...rest
 }) => (
   <button
+    type="button"
     className={cls(
       prefixCls,
       {
