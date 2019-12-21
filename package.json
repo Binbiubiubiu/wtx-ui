@@ -36,14 +36,15 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts?(x)}": [
+    "**/*.scss": [
+      "stylelint --syntax scss"
+    ],
+    "**/*.{js,jsx,tsx,ts,scss,md,json}": [
       "prettier --write",
-      "eslint --fix",
       "git add"
     ],
-    "components/**/*.scss": [
-      "stylelint --syntax scss --fix",
-      "git add"
+    "**/*.{js,tsx,ts}": [
+      "npm run lint:script"
     ]
   },
   "repository": {

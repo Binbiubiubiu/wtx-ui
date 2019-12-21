@@ -3,7 +3,6 @@
 exports[`Chart should render charts components 1`] = `
 Array [
   <div
-    data="[object Object],[object Object],[object Object],[object Object]"
     style="width:400px;height:240px"
   />,
   <div

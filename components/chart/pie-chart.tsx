@@ -32,6 +32,7 @@ export class PieChart extends Component<PieChartProps> {
   }
 
   render() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { data, ...rest } = this.props;
 
     return <div ref={this.chartRef} {...rest} />;
