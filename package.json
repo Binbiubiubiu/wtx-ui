@@ -15,7 +15,7 @@
     "clean": "rimraf dist lib es",
     "babel:es": "cross-env babel components --out-dir es --extensions '.ts,.tsx' --ignore '**/__tests__'",
     "babel:cjs": "cross-env OUTPUT_MOUDLES=cjs babel components --out-dir lib --extensions '.ts,.tsx' --ignore '**/__tests__'",
-    "lint:script": "eslint . --ext .ts,.tsx  --fix",
+    "lint:script": "eslint --ext .js,.ts,.tsx  --fix ./",
     "lint:style": "stylelint 'components/**/*.scss' --syntax scss --fix",
     "lint:fmt": "prettier -c --write 'components/**/*.{ts,scss,tsx}'",
     "lint": "npm run lint:script && npm run lint:style && npm run lint:fmt ",

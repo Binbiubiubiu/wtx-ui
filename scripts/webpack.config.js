@@ -67,24 +67,24 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { importLoaders: 2 } },
-          "postcss-loader",
-          "sass-loader"
-        ]
+          { loader: 'css-loader', options: { importLoaders: 2 } },
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|woff|eot|ttf|svg)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
               limit: false,
               name: '[name].[ext]',
               outputPath: 'assets',
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     ],
   },
   optimization: {
@@ -107,21 +107,21 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({
         // 压缩css  与 ExtractTextPlugin 配合使用
-        cssProcessor: require("cssnano"),
+        cssProcessor: require('cssnano'),
         cssProcessorOptions: { discardComments: { removeAll: true } }, // 移除所有注释
-        canPrint: true // 是否向控制台打印消息
-      })
+        canPrint: true, // 是否向控制台打印消息
+      }),
     ],
     splitChunks: {
       cacheGroups: {
         styles: {
-          name: "styles",
+          name: 'styles',
           test: /\.(sa|sc|c)ss$/,
-          chunks: "all",
-          enforce: true
-        }
-      }
-    }
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
   plugins: [
     new ProgressBarPlugin({
@@ -132,9 +132,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
-      filename: "[name].min.css"
+      filename: '[name].min.css',
       // chunkFilename: "[id].css"
       // ignoreOrder: false // Enable to remove warnings about conflicting order
-    })
+    }),
   ],
 };
