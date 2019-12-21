@@ -39,12 +39,12 @@
     "**/*.scss": [
       "stylelint --syntax scss"
     ],
+    "**/*.{js,tsx,ts}": [
+      "npm run lint:script"
+    ],
     "**/*.{js,jsx,tsx,ts,scss,md,json}": [
       "prettier --write",
       "git add"
-    ],
-    "**/*.{js,tsx,ts}": [
-      "npm run lint:script"
     ]
   },
   "repository": {
