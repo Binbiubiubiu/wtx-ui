@@ -42,7 +42,7 @@
     "**/*.{js,tsx,ts}": [
       "npm run lint:script"
     ],
-    "**/*.{js,jsx,tsx,ts,scss,md,json}": [
+    "**/*.{js,jsx,tsx,ts,scss,md,mdx,json}": [
       "prettier --write",
       "git add"
     ]
