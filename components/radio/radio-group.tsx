@@ -1,6 +1,5 @@
 import React, { FC, useState, useEffect, CSSProperties } from 'react';
 import cls from 'classnames';
-import { randomString } from '../_util';
 
 import { prefixlib } from '../_util/constants';
 
@@ -30,7 +29,6 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   ...rest
 }) => {
   const [checked, setChecked] = useState<typeof value>(value);
-  const [randomName] = useState(randomString(8));
 
   useEffect(() => {
     onChange && onChange(checked);
@@ -39,11 +37,11 @@ export const RadioGroup: FC<RadioGroupProps> = ({
 
   return (
     <div className={cls(prefixCls, className)} {...rest}>
-      {React.Children.map(children, (child: any) =>
+      {React.Children.map(children, (child: any, i: number) =>
         React.cloneElement(child, {
           onChecked: (val: typeof value) => setChecked(val),
           checked,
-          name: child.props.name || randomName,
+          name: child.props.name || `wtx-radio-${i}`,
         }),
       )}
     </div>

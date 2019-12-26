@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should render Icon components 1`] = `
+Array [
+  <img
+    alt=""
+    class="wtx-image-icon"
+    src="test.png"
+    style="width:80;height:80"
+  />,
+  <img
+    alt=""
+    class="wtx-image-icon wtx-image-icon__clickable"
+    src="test.png"
+    style="width:80;height:80"
+  />,
+]
+`;

@@ -23,7 +23,7 @@ export type LoadingProps = {
 export const Loading: FC<LoadingProps> = props => {
   const { icon, ...rest } = props;
 
-  return <ReactSVG src={require(`./loading-${icon}.svg`)} {...rest} />;
+  return <ReactSVG src={require(`./loading-${icon}.svg`) as string} {...rest} />;
 };
 
 Loading.defaultProps = defaultProps;

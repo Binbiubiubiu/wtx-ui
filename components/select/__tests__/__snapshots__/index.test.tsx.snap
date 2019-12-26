@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render Select components 1`] = `
+<div
+  class="rc-select rc-select-single rc-select-show-arrow"
+>
+  <div
+    class="rc-select-selector"
+  >
+    <span
+      class="rc-select-selection-search"
+    >
+      <input
+        aria-activedescendant="undefined_list_0"
+        aria-autocomplete="list"
+        aria-controls="undefined_list"
+        aria-haspopup="listbox"
+        aria-owns="undefined_list"
+        autocomplete="off"
+        class="rc-select-selection-search-input"
+        role="combobox"
+        style="opacity:0"
+        value=""
+      />
+    </span>
+    <span
+      class="rc-select-selection-placeholder"
+    />
+  </div>
+  <span
+    aria-hidden="true"
+    class="rc-select-arrow"
+    style="user-select:none;-webkit-user-select:none"
+    unselectable="on"
+  >
+    <span
+      class="rc-select-arrow-icon"
+    />
+  </span>
+</div>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoPlayer should render VideoPlayer components 1`] = `
+<div
+  class="wtx-video-player__wrapper"
+  style="width:400px;height:240px"
+>
+  <video
+    class="video-js wtx-video-player"
+  />
+</div>
+`;

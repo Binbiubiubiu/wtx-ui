@@ -9,11 +9,12 @@ describe('Chart', () => {
       <>
         <PieChart
           data={[
-            { name: '可视化烟感', count: 234 },
-            { name: 'type2', count: 134 },
-            { name: 'type3', count: 204 },
-            { name: 'type4', count: 134 },
+            { name: '可视化烟感', value: 234 },
+            { name: 'type2', value: 134 },
+            { name: 'type3', value: 204 },
+            { name: 'type4', value: 134 },
           ]}
+          className="test"
           style={{ width: 400, height: 240 }}
         />
         <LineChart
@@ -31,6 +32,7 @@ describe('Chart', () => {
             [191, 289, 320, 165, 245, 109, 92],
           ]}
           tags={['第一类型', '第二类型']}
+          className="test"
           style={{
             width: 400,
             height: 190,
@@ -70,5 +72,9 @@ describe('Chart', () => {
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should style output is not null', () => {
+    expect(require('../style')).not.toBeNull();
   });
 });

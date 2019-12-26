@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row should render Row components 1`] = `
+Array [
+  <div
+    class="wtx-row wtx-row-flex-top wtx-row-flex-start"
+    style="width:230px;background:rgba(255,255,255,.2);margin-bottom:20px"
+  >
+    <div
+      class="blue"
+    >
+      flex-start
+    </div>
+    <div
+      class="red"
+    />
+  </div>,
+  <div
+    class="wtx-row wtx-row-flex-top wtx-row-flex-center"
+    style="width:230px;background:rgba(255,255,255,.2);margin-bottom:20px"
+  >
+    <div
+      class="blue"
+    >
+      center
+    </div>
+    <div
+      class="red"
+    />
+  </div>,
+  <div
+    class="wtx-row wtx-row-flex-top wtx-row-flex-end"
+    style="width:230px;background:rgba(255,255,255,.2);margin-bottom:20px"
+  >
+    <div
+      class="blue"
+    >
+      flex-end
+    </div>
+    <div
+      class="red"
+    />
+  </div>,
+  <div
+    class="wtx-row wtx-row-flex-top wtx-row-flex-space-between"
+    style="width:230px;background:rgba(255,255,255,.2);margin-bottom:20px"
+  >
+    <div
+      class="blue"
+    >
+      space-between
+    </div>
+    <div
+      class="red"
+    />
+  </div>,
+  <div
+    class="wtx-row wtx-row-flex-top wtx-row-flex-space-around"
+    style="width:230px;background:rgba(255,255,255,.2);margin-bottom:20px"
+  >
+    <div
+      class="blue"
+    >
+      space-around
+    </div>
+    <div
+      class="red"
+    />
+  </div>,
+]
+`;

@@ -8,7 +8,7 @@ type JustifyType = 'start' | 'center' | 'end' | 'space-between' | 'space-around'
 
 const defaultProps = {
   prefixCls: `${prefixlib}row`,
-  align: 'top' as AlignType,
+  align: 'top' as 'top' | 'middle' | 'bottom',
   justify: 'start' as JustifyType,
   gutter: 0,
 };

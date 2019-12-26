@@ -3,6 +3,7 @@
 exports[`Chart should render charts components 1`] = `
 Array [
   <div
+    class="test"
     style="width:400px;height:240px"
   />,
   <div
@@ -11,6 +12,7 @@ Array [
     yaxis="200,189,120,165,145,209,192"
   />,
   <div
+    class="test"
     style="width:400px;height:190px"
     tags="第一类型,第二类型"
     xaxis="11.1,11.2,11.3,11.4,11.5,11.6,11.7"
